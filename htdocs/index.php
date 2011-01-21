@@ -14,7 +14,8 @@ include(ROOTPATH."/include/header.php");
 <!-- 2ND COLUMN -->
 <td id="b3">
 <div class="maintext">
-<h2>Content Coming</h2>
+
+<img src="images/cscap.png" alt="CSCAP Logo"/>
 
 <h2>Collaborating Institutions</h2>
 
