@@ -11,7 +11,7 @@
 <!-- INSERT LINKS IN LEFT COLUMN -->
 <div class="linkhead"><h3>Project Info:</h3></div>
 <ul>
-<li><a href="#">Primary Investigators</a></li>
+<li><a href="team.php">Primary Investigators</a></li>
 <li><a href="#">Project Objectives</a></li>
 <li><a href="#">Site Locations</a></li>
 
