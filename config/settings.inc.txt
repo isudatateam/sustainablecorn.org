@@ -1,4 +1,5 @@
 <?php
 define("ROOTPATH", "/home/akrherz/projects/sustainablecorn");
+define("ROOTURL", "http://localhost/sustainablecorn");
 define("DBCONNSTR", "dbname=sustainablecorn host=localhost user=nobody");
 ?>

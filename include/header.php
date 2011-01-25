@@ -26,7 +26,7 @@ h5 { font-size: 100%; font-weight: 600; color: #333; display: inline; }
 <div id="container">
 
 <!-- BANNER -->
-
+<!--
 <div id="masthead">
 
 <div id="nameplate">
@@ -84,10 +84,7 @@ h5 { font-size: 100%; font-weight: 600; color: #333; display: inline; }
 </fieldset>
 </div>
 </div>
+-->
 
-
-<!-- TITLE BAR -->
-
-<div id="titlebar">
-<h1>SustainableCorn.org</h1>
-</div>
+<img src="<?php echo ROOTURL; ?>/images/banner.jpg" alt="Page Banner"/>
+<br clear="all" />
