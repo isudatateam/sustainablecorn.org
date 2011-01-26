@@ -15,6 +15,30 @@ include(ROOTPATH."/include/header.php");
 <td id="b2">
 <div class="maintext">
 
+<p><strong>Climate Change, Mitigation, and Adaptation in Corn-based Cropping Systems
+<br />
+USDA-NIFA A3101 Regional Approaches to Climate Change Cropping systems: cereal production systems (corn)
+</strong></p>
+
+<p>This project, begun February 2011, consists of a team from 12 institutions across nine states in the 
+Heartland (Illinois, Indiana, Iowa, Michigan, Minnesota, Missouri, Ohio, South Dakota and Wisconsin) 
+which will address the societal challenge to mitigate and adapt the North Central corn–based 
+cropping system to climate change.  <strong>The vision is to create a coordinated functional 
+network to develop science-based knowledge on climate mitigation and adaptation that informs 
+policy development and guides on-farm, watershed level, and public decision making.</strong> Standardized 
+protocols and a network of 21 carefully-selected sites will be used to provide baseline measurements 
+on greenhouse gases, carbon, nitrogen and water usage data and to evaluate a suite of crop management 
+practices.  These include tillage, cover crops, crop rotations, drainage water management and enhanced 
+nitrogen management techniques.  Data from these sites will be archived in a central database and used
+ in conjunction with public climate data.  Physical, climate, sociological and economic models will be 
+ applied in an iterative way to establish strengths and weaknesses of a set of cropping practices.  
+ Life cycle analyses, social, and economic findings will be used to develop public policy 
+ recommendations and engage producers and stakeholders in managing for climate uncertainty and 
+ environmental sustainability. This project integrates research, extension and education, builds 
+ capacity for extension to address climate change needs of stakeholders, and prepares the next 
+ generation of scientists for interdisciplinary research on the intersection of agriculture and climate. </p>
+
+
 <img src="images/cscap.png" alt="CSCAP Logo"/>
 
 <h2>Project Objectives</h2>
