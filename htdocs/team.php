@@ -16,7 +16,7 @@
 <table id="main" cellspacing="0">
 
 <tr>
-<td  id="a2" rowspan="2">
+<td  id="a2" rowspan="2" valign="top">
 <?php include(ROOTPATH."/include/side.php"); ?>
 
 </td>
@@ -27,12 +27,12 @@
 <?php
 echo "<h3>Project Team</h3>";
 echo "<table cellpadding=\"2\" cellspacing=\"0\" border=\"1\" id=\"people\">" .
-		"<thead><tr><th>First Name</th><th>Last Name</th>" .
-		"<th>Affiliation</th><th>Phone</th></tr></thead>";
+		"<thead><tr><th>Name</th>" .
+		"<th>Affiliation</th></tr></thead>";
 echo "<tbody>";
 for($i=0;$row=@pg_fetch_array($rs,$i);$i++){
-	echo sprintf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>", $row["fname"], 
-		$row["lname"], $row["affiliation"], $row["phone"]);
+	echo sprintf("<tr><td><a href=\"mailto:%s\">%s %s</td><td>%s</td></tr>", $row["email"],
+		$row["fname"], $row["lname"], $row["affiliation"] );
 	
 }
 echo "</tbody>";
