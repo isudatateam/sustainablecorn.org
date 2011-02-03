@@ -20,6 +20,8 @@ include(ROOTPATH."/include/header.php");
 USDA-NIFA A3101 Regional Approaches to Climate Change Cropping systems: cereal production systems (corn)
 </strong></p>
 
+<img src="images/cornmap.png" alt="Corn Productivity"/>
+
 <p>This project, begun February 2011, consists of a team from 12 institutions across nine states in the 
 Heartland (Illinois, Indiana, Iowa, Michigan, Minnesota, Missouri, Ohio, South Dakota and Wisconsin) 
 which will address the societal challenge to mitigate and adapt the North Central corn–based 
