@@ -18,6 +18,7 @@ include(ROOTPATH."/include/header.php");
 <p><strong>Climate Change, Mitigation, and Adaptation in Corn-based Cropping Systems
 <br />
 USDA-NIFA A3101 Regional Approaches to Climate Change Cropping systems: cereal production systems (corn)
+<br />Dr. Lois Wright Morton, Project Director
 </strong></p>
 
 <img src="images/cornmap.png" alt="Corn Productivity"/>

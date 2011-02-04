@@ -12,6 +12,7 @@
 <div class="linkhead"><h3>Links:</h3></div>
 <ul>
 <li><a href="/">Home</a></li>
+<li><a href="contact.php">Contact</a></li>
 <li><a href="#">Education/Outreach</a></li>
 <li><a href="#">Extension</a></li>
 <li><a href="#">Press Releases</a></li>

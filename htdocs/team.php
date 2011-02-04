@@ -7,7 +7,7 @@
  include("../config/settings.inc.php");
  $dbconn = pg_connect(DBCONNSTR);
  
- $rs = pg_query($dbconn, "SELECT * from people ORDER by lname ASC");
+ $rs = pg_query($dbconn, "SELECT * from people ORDER by role, lname ASC");
  
  include(ROOTPATH."/include/header.php");
 
@@ -31,8 +31,10 @@ echo "<table cellpadding=\"2\" cellspacing=\"0\" border=\"1\" id=\"people\">" .
 		"<th>Affiliation</th></tr></thead>";
 echo "<tbody>";
 for($i=0;$row=@pg_fetch_array($rs,$i);$i++){
-	echo sprintf("<tr><td><a href=\"mailto:%s\">%s %s</td><td>%s</td></tr>", $row["email"],
-		$row["fname"], $row["lname"], $row["affiliation"] );
+	$special = '';
+	if ( $row["role"] == 1 ){ $special = " , project director";}
+	echo sprintf("<tr><td><a href=\"mailto:%s\">%s %s</a>%s</td><td>%s</td></tr>", $row["email"],
+		$row["fname"], $row["lname"], $special, $row["affiliation"] );
 	
 }
 echo "</tbody>";

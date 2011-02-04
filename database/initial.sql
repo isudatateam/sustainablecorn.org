@@ -10,6 +10,7 @@ CREATE TABLE people(
 	email varchar,
 	homepage varchar,
 	affiliation varchar,
-	phone varchar);
+	phone varchar,
+	role smallint);
 	
 GRANT SELECT on people to nobody;
