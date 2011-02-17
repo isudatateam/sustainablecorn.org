@@ -9,7 +9,7 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>sustainablecorn.org</title>
+<title><?php echo isset($TITLE) ? $TITLE : 'sustainablecorn.org'; ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" media="all" href="css/isuP.css" />
 <style type="text/css">

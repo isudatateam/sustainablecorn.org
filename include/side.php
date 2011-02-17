@@ -15,7 +15,7 @@
 <li><a href="contact.php">Contact</a></li>
 <li>Education/Outreach</li>
 <li>Extension</li>
-<li>Press Releases</li>
+<li><a href="press.php">Press Releases</a></li>
 <li><a href="team.php">Primary Investigators</a></li>
 <li>Progress Report</li>
 <li>Project Structure</li>
