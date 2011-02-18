@@ -20,7 +20,7 @@ include(ROOTPATH."/include/header.php");
 <ol>
  <li>Mutual respect</li>
  <li>Negotiate the big stuff, issue not the person</li>
- <li>Comprimise the little stuff</li>
+ <li>Compromise the little stuff</li>
  <li>Self organize</li>
  <li>Patience with each other</li>
  <li>Communication</li>
