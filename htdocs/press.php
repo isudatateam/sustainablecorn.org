@@ -26,6 +26,8 @@ include(ROOTPATH."/include/header.php");
   <td><a href="pr/usda-release-110218.docx">MS Word</a></td></tr>
 <tr><td>18 Feb 2011</td><td>Iowa State Press Release</td>
   <td><a href="pr/isu-release-110218.docx">MS Word</a></td></tr>
+<tr><td>18 Feb 2011</td><td>Dr Lois Wright Morton, Project Director statement</td>
+  <td><a href="pr/morton-110218.doc">MS Word</a></td></tr>
 </table>
 
 </div>

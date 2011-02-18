@@ -1,8 +1,8 @@
-AuthUserFile /var/www/config/admin.users
-AuthGroupFile /dev/null
-AuthName Administrative
-AuthType Basic
-
-
-order deny,allow
-require user iowastate
+#AuthUserFile /var/www/config/admin.users
+#AuthGroupFile /dev/null
+#AuthName Administrative
+#AuthType Basic
+#
+#
+#order deny,allow
+#require user iowastate
