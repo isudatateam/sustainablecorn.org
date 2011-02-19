@@ -24,6 +24,8 @@
 <!-- 2ND COLUMN -->
 <td id="b2">
 <div class="maintext">
+<img src="images/team-110210.jpg" />
+<br />Photo taken 10 Feb 2011 of available team members during meeting in Chicago.
 <?php
 echo "<h3>Project Team</h3>";
 echo "<table cellpadding=\"2\" cellspacing=\"0\" border=\"1\" id=\"people\">" .
