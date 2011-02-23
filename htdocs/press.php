@@ -30,6 +30,8 @@ include(ROOTPATH."/include/header.php");
   <td><a href="pr/morton-110218.doc">MS Word</a></td></tr>
 <tr><td>18 Feb 2011</td><td>South Dakota State Press Release</td>
   <td><a href="pr/sdstate-release-110218.docx">MS Word</a></td></tr>
+<tr><td>18 Feb 2011</td><td>Ohio State Press Release</td>
+  <td><a href="http://extension.osu.edu/news-releases/archives/2011/february/ohio-state-shares-in-20m-usda-grant-for-sustainability-of-corn-production-in-the-midwest">Website</a></td></tr>
 <tr><td>21 Feb 2011</td><td>Purdue Press Release</td>
   <td><a href="pr/purdue-release-110221.doc">MS Word</a></td></tr>
 </table>
