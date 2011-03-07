@@ -34,6 +34,8 @@ include(ROOTPATH."/include/header.php");
   <td><a href="http://extension.osu.edu/news-releases/archives/2011/february/ohio-state-shares-in-20m-usda-grant-for-sustainability-of-corn-production-in-the-midwest">Website</a></td></tr>
 <tr><td>21 Feb 2011</td><td>Purdue Press Release</td>
   <td><a href="pr/purdue-release-110221.doc">MS Word</a></td></tr>
+<tr><td>4 March 2011</td><td>Missouri Press Release</td>
+  <td><a href="http://extension.missouri.edu/news/DisplayStory.aspx?N=1052">Website</a></td></tr>
 </table>
 
 </div>
