@@ -70,7 +70,7 @@ analyze the economic, agronomic, and social acceptability of these practices.</l
 
 <h2>Project Narrative</h2>
 
-<p>Click <a href="docs/project_narrative.docx">here</a> for a copy of
+<p>Click <a href="docs/project_narrative.pdf">here</a> for a copy of
 the submitted project proposal in Microsoft docx format.</p>
 
 </div>
