@@ -1,0 +1,419 @@
+/* UNIVERSAL SETTINGS */
+
+body { 
+  margin: 0; 
+  padding: 0;
+  color: #000;
+  background: #fff;
+  font-size: 76%; 
+  font-family: arial, helvetica, sans-serif;
+}
+
+.skip { display: none; margin: 0; padding: 0; }
+
+p, td, ul, ol, ul, li, dl, dt, dd {
+  font-size: 100%;
+  font-family: arial, helvetica, sans-serif;
+}
+
+a:link { color: #006; }
+a:visited { color: #33C; }
+
+.hide { display: none; }
+
+.clear {
+  clear: both;
+  font-size: 0;
+}
+  
+form { margin: 0; }
+
+img { border: none; } 
+
+#container {
+  margin: auto; /* centers whole on pg */
+  border: 1px solid #666;
+  border-top: 0; /* removes opera top margin */
+  width: 752px; /* need to hold banner in */
+  voice-family: "\"}\"";
+  voice-family: inherit;
+  width: 750px;
+} body>#container { /* opera width */
+  width:750px;
+}
+
+
+
+/* MAIN TABLE BASICS */
+
+#main {
+  width: 750px;
+  margin: 0; 
+  padding: 0;
+  background: #fff;
+  font-size: 100%;
+  line-height: 1.3em;
+  }
+
+/* TITLEBAR */
+#titlebar  {
+  background: #fff;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+  padding: .3em 0 .3em 15px;
+  }
+
+#titlebar h1, #titlebar h3 {
+  color: #996;
+  padding: 0; 
+  margin: 0;
+}
+
+#titlebar h1 {
+  font-size: 18pt;
+  line-height: 1.1em; /* closes subhead-head gap */
+  }
+
+#titlebar a {
+  color: #996;
+  text-decoration: none;
+  }
+
+#titlebar h3 { /* top-level subhead */
+  font-family: verdana, arial, sans-serif; /* verdana larger */
+  font-size: 9pt;
+}
+
+
+/* TWO COL FORMAT */
+#a2 { width: 150px; border-right: 1px solid #666; }
+#b2 { width: 600px; }
+
+/* THREE COL FORMAT */
+#a3 { width: 150px; }
+#b3 { width: 450px; }
+#c3 { width: 150px; }
+#a3, #b3 { border-right: 1px solid #666; }
+
+
+/* FOUR COL FORMAT */
+#a4, #b4, #c4 { 
+  width: 187px; 
+  border-right: 1px solid #666;
+}
+#d4 { width: 189px; }
+
+/* VERTICAL NAVIGATION LINKS */ 
+
+#mainlinks { 
+  margin-bottom: 1em; 
+  line-height: 1.4;
+}
+
+#mainlinks ul {
+  list-style: none;
+  margin: 0; /* keeps left link boxes snug */
+  padding: 0; /* ditto */
+}
+
+#mainlinks li {
+  border-bottom: 1px solid #ccc;
+}
+
+#mainlinks li.divider {
+  border-bottom: 5px solid #c00;
+}
+
+#mainlinks li a {
+  display: block; /* lines go all the way */
+  padding: 1px  0.5em 1px 15px;
+  text-decoration: none;
+}
+
+#mainlinks li a:visited {
+  color: #33C;
+}
+
+#mainlinks li a:hover {
+  background: #cc9;
+  color: #c00;
+}
+
+#mainlinks .linkhead h3 {
+  border-bottom: 1px solid #ccc;
+  color: #666;
+  font-family: verdana, arial, sans-serif;
+  font-size: 100%;
+  font-weight: 700;
+  margin: 0; 
+  padding: .5em 15px 0 15px;
+}
+
+/* HEADLINE STYLES */
+
+h2.colorbar, h2.bar {
+  background: #c00;
+  color: #fff;
+  font-family: verdana, arial, sans-serif;
+  font-size: 100%;
+  margin: 0; /* closes top gap */
+  padding: .25em 0 .25em 15px;
+  }
+
+/* MAIN TEXT */
+
+.maintext {
+  padding: .5em 1em .5em 15px;
+}
+
+.maintext h2 {
+  font-size: 120%;
+  font-family: verdana, arial, sans-serif;
+  margin: 0; 
+  padding: 0 0 .25em 0;
+}
+
+.maintext h3, .maintext h4 { 
+  font-family: verdana, arial, sans-serif;
+  font-size: 100%;     
+  margin: 0; /* closes top gap */
+  padding: .5em 0 0 0;
+}
+
+.maintext p {
+  margin: 0;
+  padding: 0 0 .5em 0;
+  }
+
+.maintext ul, .maintext ol {/* moves lists flush left */
+  margin: 0;
+  padding: 0 0 .5em 15px;
+}
+
+.maintext ol {
+  padding-left: 20px; /* alpha wider than bullets */
+}
+
+/* HEADS W BACKGROUND BAR */
+
+h2.bar {
+  background: #c00;
+  color: #fff;
+  font-size: 100%; 
+  font-family: verdana, arial, sans-serif;
+  margin: 0; /* closes top gap */ 
+  padding: .25em 0 .25em 15px;
+}
+
+h2.bar a {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+h2.bar a:hover {
+  color: #cc9 !important;
+}
+
+
+/* CUTLINE */
+
+.cutline {
+  font-size: x-small;
+  margin: 0;
+  padding: .5em 1em .5em 15px;	
+}
+
+/* HIGHLIGHTS */
+
+#hilite {   /* highlight for bottom right */
+  vertical-align: bottom;
+}
+
+#hilite2 { /* khaki bar along highlight */
+  background: #fff url(http://www.iastate.edu/img/04/cc9.gif) left repeat-y; 
+  border-top: 1px solid #666;
+  margin: 0;
+  padding: .5em .5em .5em 2em;
+}
+
+
+/* FOOTER */
+
+#footer {
+  border-top: 2px solid #c00;
+  font-size: 85%;
+  line-height: 1.1em;
+  padding: 1em 15px;
+}
+
+#copyright p {
+  margin: 0;
+  line-height: 1.3em;
+}
+
+#pda {
+  padding: 1em 1em 0 15px;
+}
+
+#pda a:hover {
+  color: #c00;
+} 
+
+
+#pda {
+  padding: 1em 1em 0 15px;
+}
+
+#pda a:hover {
+  color: #c00;
+} 
+
+/* NON-BULLETED LISTS */
+ul.sublist {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 .5em .5em 0;
+}
+
+.sublist li { 
+  padding-left: 15px; text-indent: -15px;
+}
+
+#main li a:hover { 
+  color: #c00;
+}
+
+/* FOUR COLUMN NO LEFT NAV */
+
+#a4, #b4, #c4 {
+  width: 187px;
+  border-right: 1px solid #666;
+  padding-bottom: .5em;
+}
+
+#d4 {
+  width: 189px;
+}
+
+/* PHOTOS */
+.photoL {
+  float: left; 
+  padding-right: .5em;
+  font-size: x-small;  
+}
+
+.photoR {
+  float: right;
+  padding-left: .5em;
+  font-size: x-small;
+}
+
+.mainphoto {
+  background: #666; /* fills in color between cutline and pic */
+}
+
+.mainphoto p {
+  background: #666;
+  color: #fff;
+  margin: 0;
+  padding: .3em 1em .4em 15px;
+}
+
+        	
+/* BANNER  AND INDEX */
+#masthead, #mastheadni { 
+  background: #c00;
+  display: block;
+  font-family: arial,verdana,sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 750px;
+}
+
+#mastheadni {
+  padding: 5px 0 5px 0; 
+}
+
+#nameplate {
+  width: 221px;
+  background: #c00;
+  float: left;
+  padding: 6px 6px 0 15px;
+}
+
+#index {
+  background: #996;
+  float: right;
+  margin: 0;
+  padding: 0 0 0 0;
+  white-space: nowrap;
+  width: 418px;
+}  
+
+#indexlabel, a.abc:link, a.abc:visited {
+  float: left;
+  margin: 0;
+  text-decoration: none;
+  color: #fff;
+  font-size: 90%;
+  }
+
+#indexlabel {
+  background: #000 url(http://www.iastate.edu/img/llcurve.gif) bottom 
+  left no-repeat;
+  width: 42px;
+  padding: 2px 2px 2px 5px;
+  letter-spacing: 1px;
+  }
+
+a#indexlabel:hover, a#indexlabel:focus {
+  text-decoration: underline;
+  }
+
+a.abc:link, a.abc:visited {
+  background: #996;
+  display: block;
+  width: 14px;
+  padding: 2px 0;
+  text-align: center;
+  }
+
+a.abc:hover, a.abc:focus {
+  background: #c00;
+  }
+
+#a { margin-left: 3px; }
+
+#search {
+  clear: right; /* prevents drift into index */
+  color: #fff;
+  text-align: right;
+  margin: 0;
+  padding: 3px 5px 5px 5px;
+  white-space: nowrap;
+  background: #c00;
+}
+
+#search a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#search a:hover {
+  text-decoration: underline;
+}
+
+#search input {
+  font-size: xx-small;
+}
+
+
+fieldset { 
+  border: none; 
+  margin: 0; 
+  padding: 0; 
+}
+
+legend {
+  display: none;
+}
