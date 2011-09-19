@@ -646,6 +646,7 @@ var Table = (function(){
 		return table.scrape(o);
 	};
 
+	
 	/**
 	 * "Page" a table by showing only a subset of the rows
 	 */
