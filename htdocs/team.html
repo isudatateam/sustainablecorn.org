@@ -41,7 +41,7 @@
             <h1>Team</h1>
 				                 
                 
-                <table cellspacing="4" cellpadding="2" class="filter_table">
+                <table cellspacing="4" cellpadding="2" class="filter_table"  id="sf">
 <thead>
 	<tr>
 		<th class="filterable" width="208">Name</th>
@@ -49,7 +49,31 @@
 		<th class="filterable" width="216">Institution</th>
 	</tr>
     <tr>
-		<th></th>
+		<th>
+        <script type="text/javascript">
+   	function filter (phrase, _id){
+		var words = phrase.value.toLowerCase().split(" ");
+		var table = document.getElementById(_id);
+		var ele;
+		for (var r = 2; r < table.rows.length; r++){
+			ele = table.rows[r].innerHTML.replace(/<[^>]+>/g,"");
+		        var displayStyle = 'none';
+		        for (var i = 0; i < words.length; i++) {
+			    if (ele.toLowerCase().indexOf(words[i])>=0)
+				displayStyle = '';
+			    else {
+				displayStyle = 'none';
+				break;
+			    }
+		        }
+			table.rows[r].style.display = displayStyle;
+		}
+	}
+  </script>
+
+    	<input name="filt" onkeyup="filter(this, 'sf', '1')" type="text">
+
+        </th>
 		<th><select onchange="Table.filter(this,this)">
         		<option value="">All</option>
                 <option value="Admin">Admin</option>
