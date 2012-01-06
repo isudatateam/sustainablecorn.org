@@ -73,7 +73,7 @@ p.small {line-height:1.2em;}
 a, a:active {color:#CC6633;}
 a:visited {color:#CC6633;}
 div#left_col a {color:#fff; text-decoration:none;}
-div#left_col h4:hover {color:#ccffff;}
+div#left_col a:hover {color:#ccffff;}
 div#left_col h2:hover {border-bottom:1px solid #ccffff;}
 
 ul#latest_news_list {margin:0 0 1em 0; padding:0; font-size:0.9em;}
