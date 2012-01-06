@@ -75,6 +75,7 @@ a:visited {color:#CC6633;}
 div#left_col a {color:#fff; text-decoration:none; border:none;}
 div#left_col a:hover {color:#ccffff;}
 div#left_col h2:hover {border-bottom:1px solid #ccffff;}
+a:link img, a:visited img {border: 0;}
 
 ul#latest_news_list {margin:0 0 1em 0; padding:0; font-size:0.9em;}
 ul#latest_news_list li {margin:0 10px; padding:4px 0; list-style:none; border-top:1px solid #336699;}
