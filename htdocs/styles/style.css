@@ -82,6 +82,17 @@ ul#latest_news_list li {margin:0 10px; padding:4px 0; list-style:none; border-to
 ul#latest_news_list li a {display:block; text-decoration:none; color:#000; padding-left:20px;}
 ul#latest_news_list li a:hover {text-decoration:underline;}
 
+
+div#slide_show {width:380px; height:217px; overflow:hidden; position:relative; z-index:1; margin:0 0 1em 0;}
+div#slide_show div#control_holder {position:absolute; top:0; left:0px; width:380px; height:50px; z-index:1000;}
+div#controls {position:absolute; top:7px; right:7px; z-index:1001;}
+div#controls a:focus {outline:none; border:none;}
+div#controls #prev {display:block; float:left; width:14px; height:10px; background:url(../img/icons/nav/back.png) no-repeat center center; overflow:hidden; text-indent:-1200px; padding:2px;}
+div#controls #next {display:block; float:left; width:14px; height:10px; background:url(../img/icons/nav/next.png) no-repeat center center; overflow:hidden; text-indent:-1200px; padding:2px;}
+div#controls #play_control {display:block; float:left; width:14px; height:10px; background:url(../img/icons/nav/play.png) no-repeat center center; overflow:hidden; text-indent:-1200px; padding:2px;}
+div#controls #play_control.pause {background:url(../img/play.png) no-repeat center center;}
+
+
 table.data_table {width:100%; margin:0 0 1em 0; padding:0; border-collapse:collapse; border-width:1px 0 0 0; border-style:solid; border-color:#ccc;}
 table.data_table td {padding:2px 0; border-bottom:1px solid #e6e6e6;}
 
