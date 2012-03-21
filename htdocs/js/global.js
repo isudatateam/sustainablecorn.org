@@ -1,12 +1,15 @@
 // JavaScript Document
 function initSlideShow() {
-	$('#slide_holder').cycle({fx: 'fade', speed:1000, timeout:4000, next: '#next', prev: '#prev'});
+	$('#slide_holder').cycle({fx: 'fade', speed:1000, timeout:4000, next: '#next', prev: '#prev', });
+	$('#slide_caption').cycle({fx: 'fade', speed:1000, timeout:4000, next: '#next', prev: '#prev', });	
 	$('#play_control').toggle(function(){
 		$(this).toggleClass('pause');
 		$('#slide_holder').cycle('pause');
+		$('#slide_caption').cycle('pause');
 	},function(){
 		$(this).toggleClass('pause');
 		$('#slide_holder').cycle('resume');
+		$('#slide_caption').cycle('resume');
 	});
 }
 
