@@ -2,8 +2,11 @@
 /* CSS Document */
 
 div#main_content {margin:0 222px 20px 20px; width:370px; overflow:hidden;}
-div#slide_show div#control_holder {position:absolute; top:0; left:0; width:380px; height:50px; z-index:1000;}
+div#slide_show div#control_holder {position:absolute; top:0; left:0; width:600px; height:50px; z-index:1002;}
 
-div#slide_holder {position:absolute; top:0; left:0; width:380px; height:217px; z-index:1000;}
+
+div#slide_show div#slide_holder {position:absolute; top:0; left:0; width:600px; height:350px; z-index:1000;}
+
+div#slide_caption {width:600px; height:50px; overflow:hidden; z-index:1001; font-size:0.8em; font-style:italic;}
 
 ul.inner_nav li {margin:0 10px; padding:0; list-style:none; border-top:1px solid #8FB2CD; height:1em;}
