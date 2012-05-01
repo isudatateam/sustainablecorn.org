@@ -904,7 +904,7 @@ with the crop year selected above.
 </form>
 </div>
 
-<script src="management.js" type="text/javascript"></script>
+<script src="http://sustainablecorn.org/gadgets/management.js" type="text/javascript"></script>
     ]]>
   </Content>
 </Module>
