@@ -1,0 +1,1907 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="CSCAP Site Management Form" >
+  <OAuth>
+    <Service name="google">
+      <Access url="https://www.google.com/accounts/OAuthGetAccessToken" method="GET" /> 
+      <Request url="https://www.google.com/accounts/OAuthGetRequestToken?scope=https://spreadsheets.google.com/feeds/" method="GET" /> 
+      <Authorization url="https://www.google.com/accounts/OAuthAuthorizeToken" /> 
+    </Service>
+  </OAuth>
+    <Require feature="dynamic-height"/>  
+  </ModulePrefs>
+  <Content type="html">
+    <![CDATA[
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css">
+<style type="text/css">
+.ui-widget{
+ font-size: 1em !important;
+ font: inherit;
+}
+.ui-state-active{
+  background: #d44716 !important; # blue is 1882f3
+}
+.optoptions{
+  font-style: italic;
+}
+.optheader{
+  font-weight: bold;
+  color: #d44716;
+}
+</style>
+<script src="https://www.google.com/jsapi?key=ABQIAAAArXt77YptylBNPFEy0AgJxBQV4szfgV8zGZZkur1B-B3W8b5AThTSlomZliOt8JQHJGH1m63sgDu1rg" type="text/javascript"></script>
+
+<!-- Initially displayed and then hidden once we are running -->
+<div id="loading">
+ <p><strong>Management form is loading...</strong>
+</div>
+
+<!-- Displayed if this gadget needs oauth2 approval -->
+<div id="approval" style="display: none">
+  This application is a "Google Gadget" written by Daryl Herzmann and needs authorization by you to view and save data to a dedicated spreadsheet for this
+dataset.
+<a id="personalize"
+        onclick="javascript:showOneSection('waiting'); return true"
+        target="approve">Click to authorize this gadget</a>
+<p>The authorization step should open a new browser window and request permission
+to access spreadsheets on your behalf.
+</div>
+
+<!-- Displayed once the approval process begins... -->
+<div id="waiting" style="display: none">
+      Please click
+      <a href="#" onclick="javascript:bootstrap()">I've approved access</a>
+      once you've approved access to your data.
+</div>
+
+<!-- Our main 'window' -->
+<div id="main" style="display: none">
+<form name="management">
+<input id="rowid" value="0" type="hidden" />
+<input id="ipm_rowid" value="0" type="hidden" />
+<p><strong>Select Research Site:</strong>
+<select name="site" id="siteSelector" onChange="setSite(this.options[this.selectedIndex].value);">
+  <option value="invalid">Select Site from List...</option>
+</select>
+<div id="theform" style="display: none;">
+<p><strong>Select Year. Enter information under all 5 tabs. Please click the "SUBMIT" button to save your edits for each tab you enter data for.</strong>
+<div id="years">
+    <input type="radio" value="2011" id="y2011" name="year"/><label for="y2011">2011 Crop</label>
+    <input type="radio" value="2012" id="y2012" name="year" checked="checked"/><label for="y2012">2012 Crop</label>
+    <input type="radio" value="2013" id="y2013" name="year" /><label for="y2013">2013 Crop</label>
+    <input type="radio" value="2014" id="y2014" name="year" /><label for="y2014">2014 Crop</label>
+    <input type="radio" value="2015" id="y2015" name="year" /><label for="y2015">2015 Crop</label>
+</div>
+
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Field Operations</a></li>
+    <li><a href="#tabs-2">Management</a></li>
+    <li><a href="#tabs-3">Pesticides</a></li>
+    <li><a href="#tabs-4">Site Map &amp; GPS</a></li>
+    <li><a href="#tabs-5">Notes</a></li>
+  </ul>
+
+<div id="tabs-1">
+<p><strong>Add to or edit previous Field Operations entries for <span id="foryear"></span>:</strong>
+<ul id='previousOperations'>
+</ul>
+<div id="previousOperationEdit" style="display: none; border: 2px #f00 solid; padding: 5px;">You are now viewing previously entered data, if you wish to make changes please be sure to save this once done.  To cancel 
+any changes you make, click the CLEAR FORM button at the bottom.</div>
+
+<p><strong>Select Operation:</strong>
+<select name="operation" id="operation" class="optoption"  onChange="setOperation(this.options[this.selectedIndex].value);">
+  <option disabled="disabled" value="invalid" class="optheader">Select From List</optidon>
+  <option disabled="disabled" value="invalid" class="optheader">... Planting Operations ...</optidon>
+  <option value="plant_corn">Corn Planting</option>
+  <option value="plant_soy">Soybean Planting</option>
+  <option value="plant_rye">Rye Planting</option>
+  <option value="plant_wheat">Wheat Planting</option>
+  <option value="plant_alfalfa">Alfalfa Planting</option>
+  <option value="plant_other">Other Planting</option>
+  <option disabled="disabled" value="invalid" class="optheader">... Harvest Operations ...</optidon>
+  <option value="harvest_corn">Corn Harvest</option>
+  <option value="harvest_soy">Soybean Harvest</option>
+  <option value="termination_rye_corn">Rye Termination to Plant Corn</option>
+  <option value="termination_rye_soy">Rye Termination to Plant Soybean</option>
+  <option value="harvest_wheat">Wheat Harvest</option>
+  <option value="termination_alfalfa_corn">Alfalfa Termination to Plant Corn</option>
+  <option value="harvest_other">Other Harvest</option>
+  <option disabled="disabled" value="invalid" class="optheader">... Tillage + Residue Management ...</option>
+  <option value="tillage_chisel">Chisel Tillage</option>
+  <option value="tillage_chopstalks">Chop Stalks</option>   
+  <option value="tillage_cultivate">Field Cultivate</option>
+  <option value="tillage_rip">Deep Rip Tillage</option>
+  <option value="tillage_disk">Disk Tillage</option>
+  <option value="tillage_rotaryhoe">Rotary Hoe</option>
+  <option value="tillage_rowcultivate">Row Cultivate</option>  
+  <option value="tillage_strip">Strip Tillage</option>
+  <option value="tillage_vertical">Vertical Tillage</option>
+  <option disabled="disabled" value="invalid" class="optheader">... Soil Treatments...</option>
+  <option value="soiladmend_lime">Lime Application</option>  
+  <option value="manure_manure">Manure Application</option>
+  <option value="fertilizer_synthetic">Synthetic Fertilizer</option>
+</select>
+
+ <p><div id="operation_label" style="font-weight: bold;">Operation Date:</div>
+<input type="text" id="datepicker"></p>
+
+<div id="fertilizer_options" style="display: none;">
+<p>If you apply a fertilizer blend (multiple sources), create a different entry for each product.
+
+<table>
+<tr><th width="50%">Option A</th><th width="50%">Option B</th></tr>
+<tr><td>
+
+<p><strong>Product Rate (lbs of product per acre):</strong>
+<br /><input type="text" id="product_rate" size="5">
+
+<p><strong>Fertilizer Formulation (report in percent):</strong>
+<br /><i>Example: 100 lbs/acre of 18-46-0 was applied. 100 should be entered as
+ the product rate (above) with 18 in the %N box and 46 in the %P<sub>2</sub>O<sub>5</sub> box
+ below. The elemental form of each will be calculated in the database
+ using these values.</i>
+
+<br /><input type="text" id="nitrogen_rate" size="5" value="0">
+ <label for="nitrogen_rate">% N (Nitrogen)</label>
+
+<br /><input type="text" id="phosphate_rate" size="5" value="0">
+ <label for="phosphate_rate">% P<sub>2</sub>O<sub>5</sub> (Phosphate)</label>
+
+<br /><input type="text" id="phosphorus_rate" size="5" value="0">
+ <label for="phosphorus_rate">% P (Phosphorus)</label>
+
+<br /><input type="text" id="potash_rate" size="5" value="0">
+ <label for="potash_rate">% K<sub>2</sub>O (Potash)</label>
+
+<br /><input type="text" id="potassium_rate" size="5" value="0">
+ <label for="potassium_rate">% K (Potassium)</label>
+
+<br /><input type="text" id="sulfur_rate" size="5" value="0">
+ <label for="sulphur_rate">% S (Sulfur)</label>
+
+<br /><input type="text" id="zinc_rate" size="5" value="0">
+ <label for="zinc_rate">% Zn (Zinc)</label>
+
+<br /><input type="text" id="magnesium_rate" size="5" value="0">
+ <label for="magnesium_rate">% Mg (Magnesium)</label>
+
+<br /><input type="text" id="calcium_rate" size="5" value="0">
+ <label for="calcium_rate">% Ca (Calcium)</label>
+
+<br /><input type="text" id="iron_rate" size="5" value="0">
+ <label for="iron_rate">% Fe (Iron)</label>
+</td><td>
+
+<p>Use this side if you know the elemental rate per acre.
+
+<p><strong>Fertilizer Formulation (report in pounds per acre):</strong>
+
+<br /><input type="text" id="nitrogen_rate_lbs" size="5" value="0">
+ <label for="nitrogen_rate">lbs N (Nitrogen) per acre</label>
+
+<br /><input type="text" id="phosphate_rate_lbs" size="5" value="0">
+ <label for="phosphate_rate">lbs P<sub>2</sub>O<sub>5</sub> per acre(Phosphate)</label>
+
+<br /><input type="text" id="phosphorus_rate_lbs" size="5" value="0">
+ <label for="phosphorus_rate">lbs P (Phosphorus) per acre</label>
+
+<br /><input type="text" id="potash_rate_lbs" size="5" value="0">
+ <label for="potash_rate">lbs K<sub>2</sub>O (Potash) per acre</label>
+
+<br /><input type="text" id="potassium_rate_lbs" size="5" value="0">
+ <label for="potassium_rate">lbs K (Potassium) per acre</label>
+
+<br /><input type="text" id="sulfur_rate_lbs" size="5" value="0">
+ <label for="sulphur_rate">lbs S (Sulfur) per acre</label>
+
+<br /><input type="text" id="zinc_rate_lbs" size="5" value="0">
+ <label for="zinc_rate">lbs Zn (Zinc) per acre</label>
+
+<br /><input type="text" id="magnesium_rate_lbs" size="5" value="0">
+ <label for="magnesium_rate">lbs Mg (Magnesium) per acre</label>
+
+<br /><input type="text" id="calcium_rate_lbs" size="5" value="0">
+ <label for="calcium_rate">lbs Ca (Calcium) per acre</label>
+
+<br /><input type="text" id="iron_rate_lbs" size="5" value="0">
+ <label for="iron_rate">lbs Fe (Iron) per acre</label>
+
+</td></tr></table>
+</div>
+
+<div id="soiladmend_options" style="display: none;">
+<p><strong>Current soil pH of the site:</strong>
+<input type="text" id="soiladmend_current_ph" width="10" />
+
+<p><strong>Target soil pH of the site:</strong>
+<input type="text" id="soiladmend_target_ph" width="10" />
+
+<p>
+<div id="soiladmend_rate_units" style="float:right;">
+    <input type="radio" value="hectare" id="soiladmend_rate_units_hectare" name="soiladmend_rate_units" checked="checked"/><label for="soiladmend_rate_units_hectare">Mg per hectare</label>
+    <input type="radio" value="acre" id="soiladmend_rate_units_acre" name="soiladmend_rate_units"/><label for="soiladmend_rate_units_acre">tons per acre</label>
+</div>
+<strong>Application Rate:</strong>
+<input type="text" id="soiladmend_rate">
+<br clear="all" />
+
+<p><strong>What is the Neutralizing Index value of the material?</strong>
+<input type="text" id="soiladmend_neutral_index" width="10" maxlength="3" />
+
+
+</div>
+
+<div id="manure_options" style="display: none;">
+<strong>Type of manure:</strong>
+<input type="text" id="manure_type" />
+
+<p>
+<table>
+<tr><th>Application Rate:</th>
+<td><input type="text" id="manure_rate" /></td>
+<td>
+<div id="manure_rate_units">
+    <input type="radio" value="gpa" id="manure_rate_units_gpa" name="manure_rate_units" checked="checked"/><label for="manure_rate_units_gpa">gallons per acre</label>
+    <input type="radio" value="tpa" id="manure_rate_units_tpa" name="manure_rate_units"/><label for="manure_rate_units_tpa">tons per acre</label>
+    <input type="radio" value="lph" id="manure_rate_units_lph" name="manure_rate_units"/><label for="manure_rate_units_lph">L per hectare</label>
+    <input type="radio" value="mgph" id="manure_rate_units_mgph" name="manure_rate_units"/><label for="manure_rate_units_mgph">Mg per hectare</label>
+</div></td></tr></table>
+<br clear="all"/>
+<p><strong>Nutrient analysis of manure:</strong>
+
+<br /><input type="text" id="manure_nitrogen_rate" size="5" value="0">
+ <label for="manure_nitrogen_rate">% N (Total Nitrogen (TKN))</label>
+<br /><input type="text" id="manure_phosphate_rate" size="5" value="0">
+ <label for="manure_phosphate_rate">% P<sub>2</sub>0<sub>5</sub> (Phosphate)</label>
+<br /><input type="text" id="manure_potash_rate" size="5" value="0">
+ <label for="manure_potash_rate">% K<sub>2</sub>0 (Potash)</label>
+<br /><input type="text" id="manure_sulfur_rate" size="5" value="0">
+ <label for="manure_sulfur_rate">% S (Sulfur)</label>
+<br /><input type="text" id="manure_calcium_rate" size="5" value="0">
+ <label for="manure_calcium_rate">% Ca (Calcium)</label>
+<br /><input type="text" id="manure_magnesium_rate" size="5" value="0">
+ <label for="manure_magnesium_rate">% Mg (Magnesium)</label>
+
+</div>
+
+<div id="plant_options" style="display: none;">
+<table>
+<tr><td><strong>Hybrid or Variety Planted:</strong></td>
+<td><input type="text" id="plant_hybrid"></td><td>(ex: Pioneer 1234)</td></tr>
+
+<tr><td><strong>Seeding Rate:</strong></td>
+<td><input type="text" id="plant_rate"></td>
+<td><div id="plant_rate_units">
+    <input type="radio" value="hectare" id="plant_rate_units_hectare" name="plant_rate_units" checked="checked"/><label for="plant_rate_units_hectare">seeds per hectare</label>
+    <input type="radio" value="acre" id="plant_rate_units_acre" name="plant_rate_units"/><label for="plant_rate_units_acre">seeds per acre</label>
+    <input type="radio" value="lbs" id="plant_rate_units_lbs" name="plant_rate_units"/><label for="plant_rate_units_lbs">lbs per acre</label>
+</div></td></tr>
+<tr><td colspan="3">Note: To convert bu/acre to lbs/acre use: rye (56 lbs/bu), 
+alfalfa (60 lbs/bu), and wheat (60 lbs/bu).</td></tr>
+</table>
+
+</div><!-- End of plant_options -->
+
+<div id="harvest_options" style="display: none;">
+
+</div>
+
+<div id="termination_options" style="display: none;">
+
+<p><strong>How was the crop terminated?</strong>
+<select id="terminate_method">
+ <option value="herbicide">Herbicide
+ <option value="tillage">Tillage
+ <option value="herbicide+tillage">Herbicide and Tillage
+ <option value="crimping">Crimping (rye only)
+ <option value="other">Other
+</select>
+
+</div>
+
+<div id="tillage_options" style="display: none;">
+<div style="float: left;"><strong>Tillage Depth (if applicable):</strong>
+<input type="text" id="tillage_depth" size="5"></div>
+<div id="tillage_depth_units" style="float:right;">
+    <input type="radio" value="cm" id="tillage_depth_units_cm" name="tillage_depth_units" checked="checked"/><label for="tillage_depth_units_cm">centimeters</label>
+    <input type="radio" value="in" id="tillage_depth_units_in" name="tillage_depth_units"/><label for="tillage_depth_units_in">inches</label>
+</div>
+</div>
+
+<br clear="all"/>
+<p><strong>Comments:</strong>
+<br />
+<textarea name="comments" id="comments" cols="60" rows="6"></textarea>
+  
+<p>
+<input id="submitbutton" type="button" value="SUBMIT" onClick="javascript: saveOperationData();">
+<input type="button" onClick="javascript: clearData();" value="CLEAR FORM" />
+</div>
+<div id="tabs-2">
+<p><strong>Was this crop irrigated?</strong>
+<select id="irrigation" onChange="irrigation_show(this.options[this.selectedIndex].value);">
+ <option value="yes">Yes</option>
+ <option value="no">No</option>
+</select>
+
+<div id="irrigation-sub">
+
+<p><table
+<tr><td><strong>Enter the total amount applied during the growing season:</strong></td><td>
+<input type="text" size="5" id="irrigation_amount" /></td><td>
+<div id="irrigation_units" style="float:right;">
+    <input type="radio" value="cm" id="irrigation_units_cm" name="irrigation_units" checked="checked"/><label for="irrigation_units_cm">centimeters</label>
+    <input type="radio" value="in" id="irrigation_units_in" name="irrigation_units"/><label for="irrigation_units_in">inches</label>
+</div></td></tr></table>
+
+<p><strong>What method was used for irrigation?</strong>
+<select id="irrigation_method">
+ <option value="overhead">overhead (pivot/linear system)
+ <option value="sprinkler">sprinkler
+ <option value="subsurface">subsurface drip
+ <option value="flood">flood (furrow/gravity)
+</select>
+
+</div>
+
+<p><strong>Is crop residue managed uniformly across all plots?</strong>
+<select id="residue_vary" onChange="residue_show(this.options[this.selectedIndex].value);">
+ <option value="yes">Yes</option>
+ <option value="no">No</option>
+</select>
+
+<div id="residue-sub-no" style="display:none;">
+If you select No, the information will be entered later in a spreadsheet instead of
+using this form.
+</div>
+
+<div id="residue-sub-yes">
+
+<p><strong>Was residue (biomass) removed at or after grain harvest?</strong>
+<select id="residue_removal">
+ <option value="yes">Yes</option>
+ <option value="no">No</option>
+</select>
+
+<p><strong>How was the residue removed?</strong>
+<select id="residue_how">
+ <option value="n/a">Not Applicable</option>
+ <option value="mechanical">Mechanical</option>
+ <option value="burning">Burning</option>
+ <option value="other">Other</option>
+</select>
+
+<p><strong>What percent of residue was removed?</strong>
+<label for="residue_removed">Percentage Removed:</label>
+  <input type="text" id="residue_removed" style="border:0; color:#f6931f; font-weight:bold;" value="0%" />
+<div id="residue_removed_slider"></div>
+
+<p><strong>What is the estimated percent of residue cover on the surface at planting?</strong>
+<label for="residue_planting">Percentage Remaining:</label>
+  <input type="text" id="residue_planting" style="border:0; color:#f6931f; font-weight:bold;" value="100%" />
+<div id="residue_planting_slider"></div>
+
+<p><strong>What type of residue existed on the surface at planting?</strong>
+<select id="residue_type">
+ <option value="corn">Corn</option>
+ <option value="soybean">Soybean</option>
+ <option value="wheat">Wheat</option>
+ <option value="oats">Oats</option>
+ <option value="alfalfa">Alfalfa</option>
+ <option value="rye and corn">Rye and Corn</option>
+ <option value="rye and soybean">Rye and Soybean</option>
+ <option value="red clover">Red Clover</option>
+ <option value="none">None (biomass removed)</option>
+ <option value="n/a">Not Applicable</option>
+</select>
+
+</div><!-- End of residue-sub-yes -->
+<!--
+<p><strong>Was there a cover crop present at planting?</strong>
+<select id="cover_crop">
+ <option value="yes">Yes</option>
+ <option value="no">No</option>
+</select>
+
+<p><strong>Was manure applied to the field?</strong>
+<select id="manure">
+ <option value="yes">Yes</option>
+ <option value="no">No</option>
+</select>
+-->
+<p><strong>Was lime applied to this field prior to 2011? If within the past 5 years, enter the year here</strong>
+<input type="text" id="lime_year" size="10" maxlength="4" />
+
+<p><strong>Were any inorganic or organic amendments applied to the site that are not entered under the Operations tab?</strong>
+<select id="organic_amendments">
+ <option value="yes">Yes</option>
+ <option value="no">No</option>
+</select>
+
+<p><strong>If yes, enter the type of amendment here.</strong>
+<textarea id="organic_amendments_text" cols="60" rows="6"></textarea>
+
+<p>
+<input id="submitbutton2" type="button" value="SUBMIT" onClick="javascript: saveManagementData();">
+<input type="button" value="CLEAR FORM" onClick="javascript: clearManagementData();">
+
+</div><!-- End of tabs-2 -->
+<div id="tabs-3">
+<p><strong>Add to or edit previous IPM entries for <span id="ipm_foryear"></span>:</strong>
+<ul id='previousIpmOperations'>
+</ul>
+<div id="previousIpmOperationEdit" style="display: none; border: 2px #f00 solid; padding: 5px;">You are now editing a previously saved operation, please be sure to save this once done.  To cancel 
+this edit, click the CLEAR FORM button at the bottom.</div>
+
+<p><strong>Select Operation:</strong>
+<select name="ipm_operation" id="ipm_operation" class="optoption"  onChange="setIpmOperation(this.options[this.selectedIndex].value);">
+  <option disabled="disabled" value="invalid" class="optheader">Select From List</optidon>
+  <option value="herbicide">Herbicide</option>
+  <option value="insecticide">Insecticide</option>
+  <option value="fungicide">Fungicide</option>
+</select>
+
+<p><strong>Application Date:</strong>
+<input type="text" id="ipm_datepicker">
+ 
+<br />Note: You will likely have multiple pesticide applications per growing season. An entry should exist for each day you applied a herbicide, insecticide, or fungicide to the field.</p>
+
+<div id="herbicide_options" style="display: none;">
+
+<p>Note: If you tank-mixed several herbicides together enter each product individually under Product Applied and the respective rate for each. You do not need to separate products like Bicep II Magnum into active ingredients.
+
+<p><strong>Timing:</strong>
+<select name="herbicide_timing" id="herbicide_timing">
+  <option value="fall_application">Fall Application</option>
+  <option value="burndown_only">Burndown Only</option>
+  <option value="seed_applied">Seed Applied</option>
+  <option value="preplant_only">Preplant Only</option>
+  <option value="burndown+preplant">Burndown and Preplant</option>
+  <option value="pre_emerge">Pre Emerge</option>
+  <option value="post_emerge">Post Emerge</option>
+  <option value="harvest_aid">Harvest Aid</option>
+</select>
+
+<p><strong>Application made to:</strong>
+<select id="herbicide_crop">
+  <option value="corn">Corn</option>
+  <option value="soybean">Soybean</option>
+  <option value="rye">Rye</option>
+  <option value="wheat">Wheat</option>
+  <option value="alfalfa">Alfalfa</option>
+  <option value="other">Other</option>
+  <option value="none">Prior to Crop Emergence</option>
+</select>
+
+<p>
+<table>
+<tr><th>Total liquid application rate: (optional)</th>
+<td><input type="text" id="herbicide_total_rate" size="10" /></td>
+<td>
+<div id="herbicide_total_rate_units">
+    <input type="radio" value="gpa" id="herbicide_total_rate_units_gpa" name="herbicide_total_rate_units" checked="checked"/><label for="herbicide_total_rate_units_gpa">gallons per acre</label>
+    <input type="radio" value="lha" id="herbicide_total_rate_units_lha" name="herbicide_total_rate_units"/><label for="herbicide_total_rate_units_lha">L per hectare</label>
+</div>
+</td></tr>
+<tr><th>Application Pressure: (optional)</th>
+<td><input type="text" id="herbicide_pressure" size="10" /></td>
+<td>
+<div id="herbicide_pressure_units">
+    <input type="radio" value="psi" id="herbicide_pressure_units_psi" name="herbicide_pressure_units" checked="checked"/><label for="herbicide_pressure_units_psi">psi</label>
+    <input type="radio" value="kpa" id="herbicide_pressure_units_kpa" name="herbicide_pressure_units"/><label for="herbicide_pressure_units_kpa">kPa</label>
+</div>
+</td></tr>
+</table>
+
+<p><strong>Method of application:</strong>
+<select id="herbicide_method">
+  <option value="ground">Ground</option>
+  <option value="aerial">Aerial</option>
+</select>
+
+<p><table>
+<tr>
+ <th>Product Name Applied (example: Bicep II Magnum)</th>
+ <th>Product Rate Applied</th>
+ <th>Rate Units</th>
+ <th></th>
+</tr>
+
+<tr><td>1. 
+<input type="text" name="herbicide_product1" id="herbicide_product1" />
+</td><td>
+<input type="text" name="herbicide_rate1" id="herbicide_rate1" size="5"/>
+</td>
+<td>
+<div id="herbicide_rate_units1a">
+    <input type="radio" value="dry" id="herbicide_rate_units1a_dry" name="herbicide_rate_units1a"/><label for="herbicide_rate_units1a_dry">oz (dry)</label>
+    <input type="radio" value="wet" id="herbicide_rate_units1a_wet" name="herbicide_rate_units1a" checked="checked"/><label for="herbicide_rate_units1a_wet">oz (liquid)</label>
+</div>
+</td>
+<td>
+<div id="herbicide_rate_units1b">
+    <input type="radio" value="hectare" id="herbicide_rate_units1b_hectare" name="herbicide_rate_units1b"/><label for="herbicide_rate_units1b_hectare">per hectare</label>
+    <input type="radio" value="acre" id="herbicide_rate_units1b_acre" name="herbicide_rate_units1b" checked="checked"/><label for="herbicide_rate_units1b_acre">per acre</label>
+</div>
+</td></tr>
+
+<tr><td>2. 
+<input type="text" name="herbicide_product1" id="herbicide_product2" />
+</td><td>
+<input type="text" name="herbicide_rate2" id="herbicide_rate2" size="5"/>
+</td><td>
+<div id="herbicide_rate_units2a">
+    <input type="radio" value="dry" id="herbicide_rate_units2a_dry" name="herbicide_rate_units2a"/><label for="herbicide_rate_units2a_dry">oz (dry)</label>
+    <input type="radio" value="wet" id="herbicide_rate_units2a_wet" name="herbicide_rate_units2a" checked="checked"/><label for="herbicide_rate_units2a_wet">oz (liquid)</label>
+</div>
+</td>
+<td>
+<div id="herbicide_rate_units2b">
+    <input type="radio" value="hectare" id="herbicide_rate_units2b_hectare" name="herbicide_rate_units2b"/><label for="herbicide_rate_units2b_hectare">per hectare</label>
+    <input type="radio" value="acre" id="herbicide_rate_units2b_acre" name="herbicide_rate_units2b" checked="checked"/><label for="herbicide_rate_units2b_acre">per acre</label>
+</div>
+</td></tr>
+
+<tr><td>3. 
+<input type="text" name="herbicide_product3" id="herbicide_product3" />
+</td><td>
+<input type="text" name="herbicide_rate3" id="herbicide_rate3" size="5"/>
+</td><td>
+<div id="herbicide_rate_units3a">
+    <input type="radio" value="dry" id="herbicide_rate_units3a_dry" name="herbicide_rate_units3a"/><label for="herbicide_rate_units3a_dry">oz (dry)</label>
+    <input type="radio" value="wet" id="herbicide_rate_units3a_wet" name="herbicide_rate_units3a" checked="checked"/><label for="herbicide_rate_units3a_wet">oz (liquid)</label>
+</div>
+</td>
+<td>
+<div id="herbicide_rate_units3b">
+    <input type="radio" value="hectare" id="herbicide_rate_units3b_hectare" name="herbicide_rate_units3b"/><label for="herbicide_rate_units3b_hectare">per hectare</label>
+    <input type="radio" value="acre" id="herbicide_rate_units3b_acre" name="herbicide_rate_units3b" checked="checked"/><label for="herbicide_rate_units3b_acre">per acre</label>
+</div>
+</td></tr>
+
+<tr><td>4. 
+<input type="text" name="herbicide_product4" id="herbicide_product4" />
+</td><td>
+<input type="text" name="herbicide_rate4" id="herbicide_rate4" size="5"/>
+</td><td>
+<div id="herbicide_rate_units4a">
+    <input type="radio" value="dry" id="herbicide_rate_units4a_dry" name="herbicide_rate_units4a"/><label for="herbicide_rate_units4a_dry">oz (dry)</label>
+    <input type="radio" value="wet" id="herbicide_rate_units4a_wet" name="herbicide_rate_units4a" checked="checked"/><label for="herbicide_rate_units4a_wet">oz (liquid)</label>
+</div>
+</td>
+<td>
+<div id="herbicide_rate_units4b">
+    <input type="radio" value="hectare" id="herbicide_rate_units4b_hectare" name="herbicide_rate_units4b"/><label for="herbicide_rate_units4b_hectare">per hectare</label>
+    <input type="radio" value="acre" id="herbicide_rate_units4b_acre" name="herbicide_rate_units4b" checked="checked"/><label for="herbicide_rate_units4b_acre">per acre</label>
+</div>
+</td></tr>
+</table>
+
+<br clear="all" />
+<p><strong>If an adjuvant was applied, select the appropriate type:</strong>
+<select id="herbicide_adjuvant">
+ <option value="na">Not Applicable
+ <option value="nis">Non-Ionic Surfactant (NIS)
+ <option value="cropoil">Crop Oil
+ <option value="other">Other
+</select>
+<p><strong>Target weeds</strong> (enter up to 10)
+<table>
+<tr><td>1.</td><td><input type="text" name="herbicide_target1" id="herbicide_target1" /></td>
+<td>2.</td><td><input type="text" name="herbicide_target2" id="herbicide_target2" /></td></tr>
+<tr><td>3.</td><td><input type="text" name="herbicide_target3" id="herbicide_target3" /></td>
+<td>4.</td><td><input type="text" name="herbicide_target4" id="herbicide_target4" /></td></tr>
+<tr><td>5.</td><td><input type="text" name="herbicide_target5" id="herbicide_target5" /></td>
+<td>6.</td><td><input type="text" name="herbicide_target6" id="herbicide_target6" /></td></tr>
+<tr><td>7.</td><td><input type="text" name="herbicide_target7" id="herbicide_target7" /></td>
+<td>8.</td><td><input type="text" name="herbicide_target8" id="herbicide_target8" /></td></tr>
+<tr><td>9.</td><td><input type="text" name="herbicide_target9" id="herbicide_target9" /></td>
+<td>10.</td><td><input type="text" name="herbicide_target10" id="herbicide_target10" /></td></tr>
+</table>
+
+<p><strong>Developmental stage of crop i.e. V3</strong>
+<br /><input type="text" name="herbicide_stage" id="herbicide_stage" maxlength="2" size="4" />
+
+<p><strong>Justification for action.</strong> Note: This may include any measurements of pest abundance or relevant economic thresholds.
+<textarea id="herbicide_justify" rows="4" cols="60"></textarea>
+
+<p><strong>Reference.</strong> Note: This may include a discussion with an 
+ IPM consultant (e.g., county or university extension specialists) or
+ published guideline (e.g., online IPM newsletter) used in the decision
+ making process that led to the use of a pest-management strategy (e.g.,
+ application of herbicide, insecticide, or fungicide).
+<br /><textarea id="herbicide_reference" rows="6" cols="60"></textarea>
+
+<p><strong>Any additional comments?</strong>
+<textarea id="herbicide_comments" rows="6" cols="60"></textarea>
+</div><!-- End herbicide_options -->
+
+<div id="insecticide_options" style="display: none;">
+
+<p>Note: If you tank-mixed an insecticide with a herbicide or fungicide, enter each separately under their respective categories.
+
+<p><strong>Timing:</strong>
+<select name="insecticide_timing" id="insecticide_timing">
+  <option value="seed_applied">Seed Applied</option>
+  <option value="in-furrow">In-furrow</option>
+  <option value="post_emerge">Post Emerge</option>
+</select>
+
+<p><strong>Application made to:</strong>
+<select id="insecticide_crop">
+  <option value="corn">Corn</option>
+  <option value="soybean">Soybean</option>
+  <option value="rye">Rye</option>
+  <option value="wheat">Wheat</option>
+  <option value="alfalfa">Alfalfa</option>
+  <option value="other">Other</option>
+  <option value="none">Prior to Crop Emergence</option>
+</select>
+
+<p><strong>Method of application:</strong>
+<select id="insecticide_method">
+  <option value="ground">Ground</option>
+  <option value="aerial">Aerial</option>
+</select>
+
+<p>
+<table>
+<tr><th>Total liquid application rate:</th>
+<td><input type="text" id="insecticide_total_rate" size="10" /></td>
+<td>
+<div id="insecticide_total_rate_units">
+    <input type="radio" value="gpa" id="insecticide_total_rate_units_gpa" name="insecticide_total_rate_units" checked="checked"/><label for="insecticide_total_rate_units_gpa">gallons per acre</label>
+    <input type="radio" value="lha" id="insecticide_total_rate_units_lha" name="insecticide_total_rate_units"/><label for="insecticide_total_rate_units_lha">L per hectare</label>
+</div>
+</td></tr>
+<tr><th>Application Pressure:</th>
+<td><input type="text" id="insecticide_pressure" size="10" /></td>
+<td>
+<div id="insecticide_pressure_units">
+    <input type="radio" value="psi" id="insecticide_pressure_units_psi" name="insecticide_pressure_units" checked="checked"/><label for="insecticide_pressure_units_psi">psi</label>
+    <input type="radio" value="kpa" id="insecticide_pressure_units_kpa" name="insecticide_pressure_units"/><label for="insecticide_pressure_units_kpa">kPa</label>
+</div>
+</td></tr>
+</table>
+
+<p>
+<table>
+<tr>
+ <th>Product Name Applied (example: Warrior)</th>
+ <th>Product Rate Applied</th>
+ <th>Rate Units</th>
+ <th></th>
+</tr>
+
+<tr><td><input type="text" name="insecticide_product1" id="insecticide_product1" />
+</td><td>
+<input type="text" name="insecticide_rate1" id="insecticide_rate1" size="5"/>
+</td>
+<td>
+<div id="insecticide_rate_units1a">
+    <input type="radio" value="dry" id="insecticide_rate_units1a_dry" name="insecticide_rate_units1a"/><label for="insecticide_rate_units1a_dry">oz (dry)</label>
+    <input type="radio" value="wet" id="insecticide_rate_units1a_wet" name="insecticide_rate_units1a" checked="checked"/><label for="insecticide_rate_units1a_wet">oz (liquid)</label>
+</div>
+</td>
+<td>
+<div id="insecticide_rate_units1b">
+    <input type="radio" value="hectare" id="insecticide_rate_units1b_hectare" name="insecticide_rate_units1b"/><label for="insecticide_rate_units1b_hectare">per hectare</label>
+    <input type="radio" value="acre" id="insecticide_rate_units1b_acre" name="insecticide_rate_units1b" checked="checked"/><label for="insecticide_rate_units1b_acre">per acre</label>
+</div>
+</td></tr>
+</table>
+
+<br clear="all" />
+<p><strong>If an adjuvant was applied, select the appropriate type:</strong>
+<select id="insecticide_adjuvant">
+ <option value="na">Not Applicable
+ <option value="nis">Non-Ionic Surfactant (NIS)
+ <option value="cropoil">Crop Oil
+ <option value="other">Other
+</select>
+
+<p><strong>Target insects</strong> (enter up to 10)
+<table>
+<tr><td>1.</td><td><input type="text" name="insecticide_target1" id="insecticide_target1" /></td>
+<td>2.</td><td><input type="text" name="insecticide_target2" id="insecticide_target2" /></td></tr>
+<tr><td>3.</td><td><input type="text" name="insecticide_target3" id="insecticide_target3" /></td>
+<td>4.</td><td><input type="text" name="insecticide_target4" id="insecticide_target4" /></td></tr>
+<tr><td>5.</td><td><input type="text" name="insecticide_target5" id="insecticide_target5" /></td>
+<td>6.</td><td><input type="text" name="insecticide_target6" id="insecticide_target6" /></td></tr>
+<tr><td>7.</td><td><input type="text" name="insecticide_target7" id="insecticide_target7" /></td>
+<td>8.</td><td><input type="text" name="insecticide_target8" id="insecticide_target8" /></td></tr>
+<tr><td>9.</td><td><input type="text" name="insecticide_target9" id="insecticide_target9" /></td>
+<td>10.</td><td><input type="text" name="insecticide_target10" id="insecticide_target10" /></td></tr>
+</table>
+
+<p><strong>Developmental stage of crop i.e. V3</strong>
+<br /><input type="text" name="insecticide_stage" id="insecticide_stage" maxlength="2" size="4" />
+
+<p><strong>Justification for action.</strong> Note: This may include any measurements of pest abundance or relevant economic thresholds.
+<textarea id="insecticide_justify" rows="4" cols="60"></textarea>
+
+<p><strong>Reference.</strong> Note: This may include a discussion with an 
+ IPM consultant (e.g., county or university extension specialists) or
+ published guideline (e.g., online IPM newsletter) used in the decision
+ making process that led to the use of a pest-management strategy (e.g.,
+ application of herbicide, insecticide, or fungicide).
+<br /><textarea id="insecticide_reference" rows="6" cols="60"></textarea>
+
+<p><strong>Any additional comments?</strong>
+<textarea id="insecticide_comments" rows="6" cols="60"></textarea>
+</div><!-- End insecticide_options -->
+
+<div id="fungicide_options" style="display: none;">
+
+<p>Note: If you tank-mixed a fungicide with a herbicide or insecticide, enter each separately under their respective categories.
+
+<p><strong>Timing:</strong>
+<select name="fungicide_timing" id="fungicide_timing">
+  <option value="seed_applied">Seed Applied</option>
+  <option value="vegetative_application">Vegetative Application</option>
+  <option value="reproductive_application">Reproductive Application</option>
+</select>
+
+<p><strong>Method of application:</strong>
+<select id="fungicide_method">
+  <option value="ground">Ground</option>
+  <option value="aerial">Aerial</option>
+</select>
+
+<p><strong>Application made to:</strong>
+<select id="fungicide_crop">
+  <option value="corn">Corn</option>
+  <option value="soybean">Soybean</option>
+  <option value="rye">Rye</option>
+  <option value="wheat">Wheat</option>
+  <option value="alfalfa">Alfalfa</option>
+  <option value="other">Other</option>
+  <option value="none">Prior to Crop Emergence</option>
+</select>
+
+<p>
+<table>
+<tr><th>Total liquid application rate:</th>
+<td><input type="text" id="fungicide_total_rate" size="10" /></td>
+<td>
+<div id="fungicide_total_rate_units">
+    <input type="radio" value="gpa" id="fungicide_total_rate_units_gpa" name="fungicide_total_rate_units" checked="checked" /><label for="fungicide_total_rate_units_gpa">gallons per acre</label>
+    <input type="radio" value="lha" id="fungicide_total_rate_units_lha" name="fungicide_total_rate_units"/><label for="fungicide_total_rate_units_lha">L per hectare</label>
+</div>
+</td></tr>
+<tr><th>Application Pressure:</th>
+<td><input type="text" id="fungicide_pressure" size="10" /></td>
+<td>
+<div id="fungicide_pressure_units">
+    <input type="radio" value="psi" id="fungicide_pressure_units_psi" name="fungicide_pressure_units" checked="checked"/><label for="fungicide_pressure_units_psi">psi</label>
+    <input type="radio" value="kpa" id="fungicide_pressure_units_kpa" name="fungicide_pressure_units"/><label for="fungicide_pressure_units_kpa">kPa</label>
+</div>
+</td></tr></table>
+
+<p><table>
+<tr>
+ <th>Product Name Applied (example: Quilt)</th>
+ <th>Product Rate Applied</th>
+ <th>Rate Units</th>
+ <th></th>
+</tr>
+
+<tr><td><input type="text" name="fungicide_product1" id="fungicide_product1" />
+</td><td>
+<input type="text" name="fungicide_rate1" id="fungicide_rate1" size="5"/>
+</td>
+<td>
+<div id="fungicide_rate_units1a">
+    <input type="radio" value="dry" id="fungicide_rate_units1a_dry" name="fungicide_rate_units1a"/><label for="fungicide_rate_units1a_dry">oz (dry)</label>
+    <input type="radio" value="wet" id="fungicide_rate_units1a_wet" name="fungicide_rate_units1a" checked="checked"/><label for="fungicide_rate_units1a_wet">oz (liquid)</label>
+</div>
+</td>
+<td>
+<div id="fungicide_rate_units1b">
+    <input type="radio" value="hectare" id="fungicide_rate_units1b_hectare" name="fungicide_rate_units1b"/><label for="fungicide_rate_units1b_hectare">per hectare</label>
+    <input type="radio" value="acre" id="fungicide_rate_units1b_acre" name="fungicide_rate_units1b" checked="checked"/><label for="fungicide_rate_units1b_acre">per acre</label>
+</div>
+</td></tr>
+</table>
+
+<br clear="all" />
+<p><strong>If an adjuvant was applied, select the appropriate type:</strong>
+<select id="fungicide_adjuvant">
+ <option value="na">Not Applicable
+ <option value="nis">Non-Ionic Surfactant (NIS)
+ <option value="cropoil">Crop Oil
+ <option value="other">Other
+</select>
+
+<p><strong>Target pathogens</strong> (enter up to 10)
+<table>
+<tr><td>1.</td><td><input type="text" name="fungicide_target1" id="fungicide_target1" /></td>
+<td>2.</td><td><input type="text" name="fungicide_target2" id="fungicide_target2" /></td></tr>
+<tr><td>3.</td><td><input type="text" name="fungicide_target3" id="fungicide_target3" /></td>
+<td>4.</td><td><input type="text" name="fungicide_target4" id="fungicide_target4" /></td></tr>
+<tr><td>5.</td><td><input type="text" name="fungicide_target5" id="fungicide_target5" /></td>
+<td>6.</td><td><input type="text" name="fungicide_target6" id="fungicide_target6" /></td></tr>
+<tr><td>7.</td><td><input type="text" name="fungicide_target7" id="fungicide_target7" /></td>
+<td>8.</td><td><input type="text" name="fungicide_target8" id="fungicide_target8" /></td></tr>
+<tr><td>9.</td><td><input type="text" name="fungicide_target9" id="fungicide_target9" /></td>
+<td>10.</td><td><input type="text" name="fungicide_target10" id="fungicide_target10" /></td></tr>
+</table>
+
+<p><strong>Developmental stage of crop i.e. R1</strong>
+<br /><input type="text" name="fungicide_stage" id="fungicide_stage" maxlength="2" size="4" />
+
+<p><strong>Justification for action.</strong> Note: This may include any measurements of pest abundance or relevant economic thresholds.
+<textarea id="fungicide_justify" rows="4" cols="60"></textarea>
+
+<p><strong>Reference.</strong> Note: This may include a discussion with an 
+ IPM consultant (e.g., county or university extension specialists) or
+ published guideline (e.g., online IPM newsletter) used in the decision
+ making process that led to the use of a pest-management strategy (e.g.,
+ application of herbicide, insecticide, or fungicide).
+<br /><textarea id="fungicide_reference" rows="6" cols="60"></textarea>
+
+<p><strong>Any additional comments?</strong>
+<textarea id="fungicide_comments" rows="6" cols="60"></textarea>
+</div><!-- End fungicide_options -->
+
+<p>
+<input id="ipm_submitbutton" type="button" value="SUBMIT" onClick="javascript: saveIpmData();">
+<input type="button" value="CLEAR FORM" onClick="javascript: clearIpmData();">
+
+</div><!-- End tabs-3 -->
+<div id="tabs-4">
+<p><strong>Plot Map Upload</strong>
+
+<p>Upload site map with plot designations noted. Maps will be used as needed to
+clarify design and layout of plots and treatments. Please scroll to the
+bottom of this page and attach the file to this page.
+
+<p><strong>GPS Coordinates</strong>
+
+<p>Enter GPS coordinates for the 4 corners of your research plot:
+
+<table>
+<tr><th>Corner</th><th>Longitude</th><th>Latitude</th></tr>
+<tr><th>Northwest</th>
+ <td><input type="text" id="nw_lon" size="15"></td>
+ <td><input type="text" id="nw_lat" size="15"></td></tr>
+<tr><th>Northeast</th>
+ <td><input type="text" id="ne_lon" size="15"></td>
+ <td><input type="text" id="ne_lat" size="15"></td></tr>
+<tr><th>Southeast</th>
+ <td><input type="text" id="se_lon" size="15"></td>
+ <td><input type="text" id="se_lat" size="15"></td></tr>
+<tr><th>Southwest</th>
+ <td><input type="text" id="sw_lon" size="15"></td>
+ <td><input type="text" id="sw_lat" size="15"></td></tr>
+</table>
+
+<p>If this site does not have 4 straight edges, upload the coordinates for the
+perimeter into the box below.
+
+<br /><textarea id="raw_lonlat" cols="60" rows="4"></textarea>
+
+<p><input type="button" onClick="javascript: saveLonLat();" value="SAVE COORDINATES"/>
+
+
+</div><!-- End tabs-4 -->
+<div id="tabs-5">
+
+<p>Enter additional information here that does not fit within
+other tabs. Examples of this include installation dates for field equipment,
+a weather station that went down for a month, etc. These notes are associated
+with the crop year selected above.
+
+<br /><textarea id="notes" cols="60" rows="4"></textarea>
+
+<p><input type="button" onClick="javascript: saveNotes();" value="SAVE NOTES"/>
+
+
+</div><!-- End tabs-5 -->
+</div>
+</div>
+</form>
+</div>
+
+<script type="text/javascript">
+/* TODO
+ * - If it varies by experimental plot, enter the estimated cover on a plot 
+> basis (We will need people to enter % values on a per plot basis
+> somewhere... where does this make the most sense? On the spreadsheet
+> where they have to enter plot numbers to the treatments??)
+
+ * Make fonts appear the same for all portions of the form.
+ */
+  var service;
+  var sites = [];
+  var sitekeys = [];
+  var operationsEntry;
+  var managementEntry;
+  var ipmEntry;
+  var myYear = 2011;
+  var man_sskey = '0AqZGw0coobCxdE9wN2J4aVE1bUthdWFsWjNrYURHWGc';
+  var site_sskey = '0AugT6NSY_M5HdGd2cFV2WXBCQlJZNDRoSjZ0Qml4bnc';
+  var SITES_FEED;
+  var FERTELEM = [ 'nitrogen', 'phosphorus', 'phosphate', 'potassium', 
+    'potash', 'sulfur', 'calcium', 
+           'magnesium', 'zinc','iron'];
+  var MANURE_ELEM = [ 'nitrogen', 'phosphate', 
+    'potash', 'sulfur', 'calcium', 'magnesium'];
+
+function loadNotes(){
+  var selectedSite = document.getElementById("siteSelector").value;
+  var siteEntry = 0;
+  for (var i=0, n=SITES_FEED.entry.length; i < n; i++) {
+        var entry = SITES_FEED.entry[i];
+        if (entry.gsx$uniqueid.$t == selectedSite){
+           siteEntry = entry;
+        }
+  }
+  if (siteEntry == 0){
+    document.getElementById("notes").value = "";
+    return;
+  }
+
+  document.getElementById("notes").value = siteEntry['gsx$notes'+myYear].$t;
+}
+
+function loadLonLat(){
+  var keys = ['nw_lon','nw_lat','ne_lon','ne_lat','se_lon','se_lat','sw_lon','sw_lat', 'raw_lonlat'];
+
+  var selectedSite = document.getElementById("siteSelector").value;
+  var siteEntry = 0;
+  for (var i=0, n=SITES_FEED.entry.length; i < n; i++) {
+        var entry = SITES_FEED.entry[i];
+        if (entry.gsx$uniqueid.$t == selectedSite){
+           siteEntry = entry;
+        }
+  }
+  if (siteEntry == 0){
+    return;
+  }
+
+  for (var i=0;i<keys.length;i++){
+    var key = keys[i];
+    document.getElementById(keys[i]).value = siteEntry['gsx$'+ key.replace("_","")].$t;
+  }
+}
+
+/* Save the Notes Information Entered */
+function saveNotes(){
+  var selectedSite = document.getElementById("siteSelector").value;
+  var siteEntry = 0;
+  for (var i=0, n=SITES_FEED.entry.length; i < n; i++) {
+        var entry = SITES_FEED.entry[i];
+        if (entry.gsx$uniqueid.$t == selectedSite){
+           siteEntry = entry;
+        }
+  }
+  if (siteEntry == 0){
+    alert("Could not find site for saveNotes");
+    return;
+  }
+
+  var val = document.getElementById("notes").value;
+  siteEntry['gsx$notes'+myYear] = {$t: val};
+  function good(entry){
+        alert('Notes Entry was saved!');
+  }
+  function bad(error){
+        alert(error);
+  }
+  service.setHeaders({"If-Match": "*"});
+  service.updateEntry(siteEntry.id.$t, siteEntry, good, bad);
+  service.setHeaders({"If-Match": null});
+}
+
+/* Save the Lat/Lon Information Entered */
+function saveLonLat(){
+  var keys = ['nw_lon','nw_lat','ne_lon','ne_lat','se_lon','se_lat','sw_lon','sw_lat', 'raw_lonlat'];
+
+  var selectedSite = document.getElementById("siteSelector").value;
+  var siteEntry = 0;
+  for (var i=0, n=SITES_FEED.entry.length; i < n; i++) {
+        var entry = SITES_FEED.entry[i];
+        if (entry.gsx$uniqueid.$t == selectedSite){
+           siteEntry = entry;
+        }
+  }
+  if (siteEntry == 0){
+    alert("Could not find site for saveLonLat");
+    return;
+  }
+
+  for (var i=0;i<keys.length;i++){
+    var key = keys[i];
+    var val = document.getElementById(keys[i]).value;
+    //if (val.trim() == "" && key != 'raw_lonlat'){
+    //  alert("Coordinate "+ keys[i] +" invalid, try again");
+    //  return;
+    //}
+    siteEntry['gsx$'+key.replace("_","")] = {$t: val};
+  }
+    function good(entry){
+        alert('LonLat Entry was saved!');
+    }
+    function bad(error){
+        alert(error);
+    }
+    service.setHeaders({"If-Match": "*"});
+    service.updateEntry(siteEntry.id.$t, siteEntry, good, bad);
+    service.setHeaders({"If-Match": null});
+}
+
+function irrigation_show(val){
+  var el = document.getElementById("irrigation-sub");
+  if (val == "yes"){
+    el.style.display = 'block';
+  } else {
+    el.style.display = 'none';
+  }
+}
+
+function residue_show(val){
+  var elyes = document.getElementById("residue-sub-yes");
+  var elno = document.getElementById("residue-sub-no");
+  if (val == "yes"){
+    elyes.style.display = 'block';
+    elno.style.display = 'none';
+  } else {
+    elyes.style.display = 'none';
+    elno.style.display = 'block';
+  }
+}
+
+/* Sets the current operation */
+function setOperation(op_code){
+    if (op_code == "invalid"){ return; }
+    var tokens = op_code.split("_");
+    showOneOperation( tokens[0], tokens[1] );
+}
+
+/* Sets the current IPM operation */
+function setIpmOperation(op_code){
+    if (op_code == "invalid"){ return; }
+    showOneIpmOperation( op_code );
+}
+
+/* Sets the current site */
+function setSite(site_code){
+    document.getElementById("theform").style.display = 'block';
+    loadPreviousOperations();
+    loadPreviousManagement();
+    loadPreviousIpm();
+    loadLonLat();
+    loadNotes();
+}
+
+/* Sets the current year, simple enough */
+function setYear(year){
+    //console.log("setYear called "+ year);
+    myYear = year;
+    document.getElementById("foryear").innerHTML = year;
+    document.getElementById("ipm_foryear").innerHTML = year;
+    loadPreviousOperations();
+    loadPreviousManagement();
+    loadPreviousIpm();
+    loadLonLat();
+    loadNotes();
+}
+
+/* Reset the app */
+function clearData(){
+    document.getElementById("previousOperationEdit").style.display = 'none';
+    document.getElementById("rowid").value = "0";
+    document.getElementById("plant_hybrid").value = "";
+    document.getElementById("plant_rate").value = "";
+    document.getElementById("comments").value = "";
+    for (var i=0; i < FERTELEM.length; i++){
+        var elem = FERTELEM[i];
+        document.getElementById(elem + "_rate").value = 0;
+        document.getElementById(elem + "_rate_lbs").value = 0;
+    }
+    document.getElementById("submitbutton").value = "SUBMIT";
+}
+
+function clearIpmData(){
+    document.getElementById("previousIpmOperationEdit").style.display = 'none';
+    document.getElementById("ipm_rowid").value = "0";
+    var ops = ['herbicide','insecticide','pesticide'];
+    var fields = ['comments','justify', 'stage', 'reference'];
+    for (var o=0; o < ops.length; o++){
+       for (var f=0; f < fields.length; f++){
+          var el = document.getElementById(ops[o]+"_"+fields[f]);
+          if (el){ el.value = ""; }
+       }
+    }
+    document.getElementById("ipm_submitbutton").value = "SUBMIT";
+}
+
+function clearManagementData(){
+    document.getElementById("previousOperationEdit").style.display = 'none';
+    document.getElementById("rowid").value = "0";
+    document.getElementById("plant_hybrid").value = "";
+    document.getElementById("plant_rate").value = "";
+    document.getElementById("organic_amendments_text").value = "";
+    document.getElementById("submitbutton2").value = "SUBMIT";
+}
+
+/* Return an operation entry for the given id */
+function getIpmEntryByRowId(myrowid){
+    for (var i=0, n=ipmEntry.length; i < n; i++) {
+        var entry = ipmEntry[i];
+        var tokens = entry.id.$t.split("/");
+        var rowid = tokens[ tokens.length - 1];
+        if (myrowid == rowid){ return entry; }
+    }
+    return null;
+}
+
+/* Return an operation entry for the given id */
+function getOperationEntryByRowId(myrowid){
+    for (var i=0, n=operationsEntry.length; i < n; i++) {
+        var entry = operationsEntry[i];
+        var tokens = entry.id.$t.split("/");
+        var rowid = tokens[ tokens.length - 1];
+        if (myrowid == rowid){ return entry; }
+    }
+    return null;
+}
+
+/* Delete a row from the database table */
+function deleteRow(myrowid){
+    var entry = getOperationEntryByRowId(myrowid);
+    var url = entry.id.$t;
+    function good(){ 
+        loadPreviousOperations();
+        alert("Row Deleted!"); 
+    }
+    function bad(error){
+         alert(error);
+    }
+    service.setHeaders({"If-Match": "*"});
+    service.deleteEntry(url, good, bad);
+    service.setHeaders({"If-Match": null});
+}
+
+/* Delete a row from the database table */
+function deleteIpmRow(myrowid){
+    var entry = getIpmEntryByRowId(myrowid);
+    var url = entry.id.$t;
+    function good(){ 
+        loadPreviousIpm();
+        alert("Row Deleted!"); 
+    }
+    function bad(error){
+         alert(error);
+    }
+    service.setHeaders({"If-Match": "*"});
+    service.deleteEntry(url, good, bad);
+    service.setHeaders({"If-Match": null});
+}
+
+/*
+ * Edit a pre-existing IPM Entry!
+ */
+function editIpmRow(myrowid){
+    document.getElementById("ipm_rowid").value = myrowid;
+    document.getElementById("previousIpmOperationEdit").style.display = 'block';
+    var entry = getIpmEntryByRowId(myrowid);
+    var op = entry['gsx$operation'].$t;
+    setIpmOperation(op);
+    document.getElementById("ipm_operation").value = op;
+    $("#ipm_datepicker").datepicker("setDate", entry.gsx$date.$t);
+    document.getElementById(op+"_timing").value = entry['gsx$timing'].$t;
+    document.getElementById(op+"_crop").value = entry['gsx$crop'].$t;
+    document.getElementById(op+"_method").value = entry['gsx$method'].$t;
+    document.getElementById(op+"_total_rate").value = entry['gsx$totalrate'].$t;
+    $("#"+op+"_total_rate_units_lha").click();
+    document.getElementById(op+"_pressure").value = entry['gsx$pressure'].$t;
+    $("#"+op+"_pressure_units_kpa").click();
+    document.getElementById(op+"_adjuvant").value = entry['gsx$adjuvant'].$t;
+    document.getElementById(op+"_stage").value = entry['gsx$stage'].$t;
+    document.getElementById(op+"_justify").value = entry['gsx$justify'].$t;
+    document.getElementById(op+"_reference").value = entry['gsx$reference'].$t;
+    document.getElementById(op+"_comments").value = entry['gsx$comments'].$t;
+    for(var i=1;i<5;i++){
+        if (i > 1 && op != 'herbicide'){ continue; }
+        document.getElementById(op+"_product"+i).value = entry['gsx$product'+i].$t;
+        document.getElementById(op+"_rate"+i).value = entry['gsx$rate'+i].$t;
+        var ra = entry['gsx$rateunit'+i].$t;
+        if (ra != null && ra != ""){
+            $("#"+op+"_rate_units"+i+"a_"+ra).click();
+            $("#"+op+"_rate_units"+i+"b_hectare").click();
+        }
+    }
+
+    for(var i=1;i<11;i++){
+       document.getElementById(op+"_target"+i).value = entry['gsx$target'+i].$t;
+    }
+    document.getElementById("ipm_submitbutton").value = "Save Edit of Previous Operation";
+}
+
+function modify_plant_rate(entry){
+    /* Set the units for planting rate */
+    var pru = entry.gsx$plantrateunits.$t;
+    var pr = entry.gsx$plantrate.$t;
+    if (pr != null && pr != ""){
+      if (pru == 'seeds'){
+        $("#plant_rate_units_acre").click();
+        document.getElementById("plant_rate").value = parseFloat(pr) / 2.47105;
+      } else if (pru == 'lbs'){
+        $("#plant_rate_units_lbs").click();
+        document.getElementById("plant_rate").value = parseFloat(pr);
+      }
+    }
+}
+function modify_tillage_depth(entry){
+  var td = entry.gsx$tillagedepth.$t;
+  if (td != null && td != ""){
+    document.getElementById("tillage_depth").value = parseFloat(td) / 2.54;
+    $("#tillage_depth_units_in").click();
+  }
+}
+function modify_manure(entry){
+    /* 
+       1 gallons/acre = 9.353956 L/ha 
+       1 L/ha = 0.1069066 gallons/acre
+       1 T/acre =  2.2417400 Mg/ha
+       1 Mg/ha = 0.4460821 T/acre
+     */
+    document.getElementById("manure_rate").value = entry.gsx$manurerate.$t;
+    var mru = entry.gsx$manurerateunits.$t;
+    if (mru != null && mru != ""){
+       $('#manure_rate_units_'+mru).click();
+    }
+    document.getElementById("manure_type").value = entry.gsx$manuretype.$t;
+}
+
+/* Load up the data interface with a pre-existing row! */
+function editOperationRow(myrowid){
+    
+    document.getElementById("previousOperationEdit").style.display = 'block';
+    var entry = getOperationEntryByRowId(myrowid);
+    /* Load up form based on this entry! */
+    document.getElementById("comments").value = entry.gsx$comments.$t;
+    document.getElementById("rowid").value = myrowid;
+    document.getElementById("operation").value = entry.gsx$operation.$t;
+    document.getElementById("plant_hybrid").value = entry.gsx$planthybrid.$t;
+
+    modify_plant_rate(entry);
+    modify_tillage_depth(entry);
+    modify_manure(entry);
+
+    document.getElementById("soiladmend_rate").value = entry.gsx$soiladmendrate.$t;
+document.getElementById("soiladmend_current_ph").value = entry.gsx$currentph.$t;
+document.getElementById("soiladmend_target_ph").value = entry.gsx$targetph.$t;
+document.getElementById("soiladmend_neutral_index").value = entry.gsx$neutralindex.$t;
+    
+
+    document.getElementById("terminate_method").value = entry.gsx$terminatemethod.$t;
+    setOperation(entry.gsx$operation.$t);
+    $("#datepicker").datepicker("setDate", entry.gsx$date.$t);
+    document.getElementById("foryear").innerHTML = entry.gsx$year.$t;
+    document.getElementById("submitbutton").value = "Save Edit of Previous Operation";
+
+    var pr = parseFloat(entry.gsx$productrate.$t);
+    if (pr > 0){
+      for (var i=0; i < FERTELEM.length; i++){
+        var elem = FERTELEM[i];
+        document.getElementById(elem + "_rate").value = entry['gsx$'+elem].$t;
+      }
+      document.getElementById("product_rate").value = parseFloat(entry.gsx$productrate.$t) / 1.12;
+    }
+    if (pr == -1){
+      for (var i=0; i < FERTELEM.length; i++){
+        var elem = FERTELEM[i];
+        document.getElementById(elem + "_rate_lbs").value = entry['gsx$'+elem].$t;
+      }
+    }
+}
+
+/*
+ * Load entries from the IPM worksheet on the managemnet spreadsheet
+ */
+function loadPreviousIpm(){
+  url = 'https://spreadsheets.google.com/feeds/list/'+ man_sskey +'/3/private/full';
+  var callback = function(response) {
+      if (response.oauthApprovalUrl) {
+      } else if (response.feed) {
+          var sheetFeed = response.feed;
+          ipmEntry = sheetFeed.entry;
+          var prevIpmOpsUL = document.getElementById("previousIpmOperations");
+          while(prevIpmOpsUL.hasChildNodes()){
+              prevIpmOpsUL.removeChild(prevIpmOpsUL.childNodes[0]);
+          }
+          if (ipmEntry){
+            for(var i=0, n=ipmEntry.length; i < n; i++) {
+              var entry = ipmEntry[i];
+              if (entry.gsx$year.$t == myYear  && entry.gsx$uniqueid.$t == document.getElementById("siteSelector").value){
+                  var tokens = entry.id.$t.split("/");
+                  var rowid = tokens[ tokens.length - 1];
+                  var ipmdate = new Date(entry.gsx$date.$t);
+                  txt = entry.gsx$date.$t +" "+ entry.gsx$operation.$t +" <a href='#' onClick='javascript: editIpmRow(\""+ rowid +"\");'>Edit</a> &nbsp; <a href='#' onClick='javascript: deleteIpmRow(\""+ rowid +"\");'>Delete</a> &nbsp; <a href='#' onClick='javascript: editIpmRow(\""+ rowid +"\");'>View</a>";
+                  var li = document.createElement("li");
+                  li.setAttribute("opdate", entry.gsx$date.$t);
+                  li.innerHTML = txt;
+                  if (prevIpmOpsUL.children.length == 0){
+                     prevIpmOpsUL.appendChild(li);
+                  } else {
+                    var placed = false;
+                    for (var c=0; c < prevIpmOpsUL.children.length; c++){
+                      var ldate = new Date(prevIpmOpsUL.children[c].getAttribute("opdate"));
+                      if (ipmdate < ldate){
+                         prevIpmOpsUL.insertBefore(li, prevIpmOpsUL.children[c]);
+                         placed = true;
+                         break;
+                      }
+                    }
+                    if (! placed){
+                      prevIpmOpsUL.appendChild(li);
+                    }
+                 }
+              }
+            }
+          }
+          if (prevIpmOpsUL.children.length == 0){
+              var li = document.createElement("li");
+              li.innerHTML = 'No IPM operations found...';
+              prevIpmOpsUL.appendChild(li);
+          }
+      } else {
+            var main = document.getElementById('main');
+            var err = document.createTextNode('Something went wrong');
+            main.appendChild(err);
+            showOneSection('main');
+      }
+  };
+  service = new google.gdata.client.GoogleService('testapp');
+  service.useOAuth('google');
+  service.getFeed(url, callback, callback);
+}
+
+
+function loadPreviousManagement(){
+  url = 'https://spreadsheets.google.com/feeds/list/'+ man_sskey +'/2/private/full';
+  var callback = function(response) {
+      if (response.oauthApprovalUrl) {
+      } else if (response.feed) {
+          var sheetFeed = response.feed;
+          managementEntry = sheetFeed.entry;
+          if (managementEntry){
+          for(var i=0, n=managementEntry.length; i < n; i++) {
+              var entry = managementEntry[i];
+              if (entry.gsx$year.$t == myYear  && entry.gsx$uniqueid.$t == document.getElementById("siteSelector").value){
+                  /* Assign form values based on this entry */
+                 //document.getElementById("cover_crop").value = entry.gsx$covercrop.$t;
+document.getElementById("lime_year").value = entry.gsx$limeyear.$t;
+                 document.getElementById("residue_vary").value = entry.gsx$residuevary.$t;
+                 document.getElementById("residue_type").value = entry.gsx$residuetype.$t;
+                 $( "#residue_removed_slider" ).slider("value", entry.gsx$residueremovalpercentage.$t);
+                 $( "#residue_planting_slider" ).slider("value", entry.gsx$residueplantingpercentage.$t);
+                 $( "#residue_planting" ).val( entry.gsx$residueplantingpercentage.$t +" %");
+$( "#residue_removed" ).val( entry.gsx$residueremovalpercentage.$t +" %");
+                
+                 //document.getElementById("manure_rate").value = entry.gsx$manurerate.$t;          
+//document.getElementById("manure_rate_units").value = entry.gsx$manurerateunits.$t;
+                 //document.getElementById("manure_type").value = entry.gsx$manuretype.$t;
+                //document.getElementById("lime").value = entry.gsx$lime.$t;
+                 document.getElementById("organic_amendments").value = entry.gsx$organicamendments.$t;
+                 document.getElementById("organic_amendments_text").value = entry.gsx$organicamendmentstext.$t;
+document.getElementById("irrigation").value = entry.gsx$irrigation.$t;
+var ia = entry.gsx$irrigationamount.$t;
+if (ia != null && ia != ""){
+  document.getElementById("irrigation_amount").value = parseFloat(ia) / 2.54;
+  $("#irrigation_units_in").click();
+}
+document.getElementById("irrigation_method").value = entry.gsx$irrigationmethod.$t;
+
+              }
+          }}
+      } else {
+            var main = document.getElementById('main');
+            var err = document.createTextNode('Something went wrong');
+            main.appendChild(err);
+            showOneSection('main');
+      }
+  };
+  service = new google.gdata.client.GoogleService('testapp');
+  service.useOAuth('google');
+  service.getFeed(url, callback, callback);
+}
+
+function loadPreviousOperations(){
+  url = 'https://spreadsheets.google.com/feeds/list/'+ man_sskey +'/1/private/full';
+  var callback = function(response) {
+      if (response.oauthApprovalUrl) {
+      } else if (response.feed) {
+          var sheetFeed = response.feed;
+          operationsEntry = sheetFeed.entry;
+          var prevOpsUL = document.getElementById("previousOperations");
+          while(prevOpsUL.hasChildNodes()){
+              prevOpsUL.removeChild(prevOpsUL.childNodes[0]);
+          }
+          if (operationsEntry){
+            for(var i=0, n=operationsEntry.length; i < n; i++) {
+              var entry = operationsEntry[i];
+              if (entry.gsx$year.$t == myYear  && entry.gsx$uniqueid.$t == document.getElementById("siteSelector").value){
+                  var tokens = entry.id.$t.split("/");
+                  var opdate = new Date(entry.gsx$date.$t);
+                  var rowid = tokens[ tokens.length - 1];
+                  txt = entry.gsx$date.$t +" "+ entry.gsx$operation.$t +" <a href='#' onClick='javascript: editOperationRow(\""+ rowid +"\");'>Edit</a> &nbsp; <a href='#' onClick='javascript: deleteRow(\""+ rowid +"\");'>Delete</a> &nbsp; <a href='#' onClick='javascript: editOperationRow(\""+ rowid +"\");'>View</a>";
+                  var li = document.createElement("li");
+                  li.setAttribute("opdate", entry.gsx$date.$t);
+                  li.innerHTML = txt;
+                  if (prevOpsUL.children.length == 0){
+                     prevOpsUL.appendChild(li);
+                  } else {
+                    var placed = false;
+                    for (var c=0; c < prevOpsUL.children.length; c++){
+                      var ldate = new Date(prevOpsUL.children[c].getAttribute("opdate"));
+                      if (opdate < ldate){
+                         prevOpsUL.insertBefore(li, prevOpsUL.children[c]);
+                         placed = true;
+                         break;
+                      }
+                    }
+                    if (! placed){
+                      prevOpsUL.appendChild(li);
+                    }
+                  }
+              }
+            }
+          }
+          if (prevOpsUL.children.length == 0){
+              var li = document.createElement("li");
+              li.innerHTML = 'No management operations found...';
+              prevOpsUL.appendChild(li);
+          }
+      } else {
+            var main = document.getElementById('main');
+            var err = document.createTextNode('Something went wrong');
+            main.appendChild(err);
+            showOneSection('main');
+      }
+  };
+  service = new google.gdata.client.GoogleService('testapp');
+  service.useOAuth('google');
+  service.getFeed(url, callback, callback);
+}
+
+function showOneIpmOperation(toshow) {
+    var sections = [ 'herbicide', 'insecticide', 'fungicide' ];
+    for (var i=0; i < sections.length; ++i) {
+        var s = sections[i];
+        var el = document.getElementById(s+"_options");
+        if (s === toshow) {
+            el.style.display = "block";
+        } else {
+            el.style.display = "none";
+        }
+    }
+}
+
+function showOneOperation(toshow, subtype) {
+    var sections = [ 'plant', 'harvest', 'tillage', 
+        'fertilizer', 'soiladmend', 'manure','termination'];
+    var sectionLabels = [ 'Planting Date:', 'Harvest Date:', 'Tillage Date:', 
+        'Fertilizer Date:', 'Lime Application Date:', 'Manure Application Date:', 'Termination Date'];
+    for (var i=0; i < sections.length; ++i) {
+        var s = sections[i];
+        var el = document.getElementById(s+"_options");
+        if (s === toshow) {
+            document.getElementById("operation_label").innerHTML = sectionLabels[i];
+            
+            el.style.display = "block";
+        } else {
+            el.style.display = "none";
+        }
+    }
+}
+
+      function showOneSection(toshow) {
+        var sections = [ 'loading', 'main', 'approval', 'waiting' ];
+        for (var i=0; i < sections.length; ++i) {
+          var s = sections[i];
+          var el = document.getElementById(s);
+          if (s === toshow) {
+            el.style.display = "block";
+          } else {
+            el.style.display = "none";
+          }
+        }
+      }
+
+/*
+ * Called from clicking on the save data button
+ */
+function saveIpmData(){
+    var operation = document.getElementById("ipm_operation").value;
+    if (operation == 'invalid'){
+       alert("Please select a valid IPM Operation");
+       return;
+    }
+
+    if (document.getElementById("ipm_rowid").value != "0"){ 
+        var myrowid = document.getElementById("ipm_rowid").value;
+        entry = getIpmEntryByRowId(myrowid);
+        url = entry.id.$t;
+     } else {
+      url = 'https://spreadsheets.google.com/feeds/list/'+ man_sskey +'/3/private/full';
+      entry = {xmlns: "http://www.w3.org/2005/Atom", 
+         xmlns$gsx: "http://schemas.google.com/spreadsheets/2006/extended"};
+      }
+    entry['gsx$uniqueid'] = {$t:document.getElementById("siteSelector").value};
+    entry['gsx$year'] = {$t:myYear};
+    entry['gsx$operation'] = {$t: operation};
+    for(var i=1;i<5;i++){  
+        if (i > 1 && operation != 'herbicide'){ continue; }  
+        entry['gsx$product'+i] = {$t: document.getElementById(operation+"_product"+i).value};
+        var rate = parseFloat(document.getElementById(operation+"_rate"+i).value);
+        
+        var units = $('#'+operation+'_rate_units'+i+'a :radio:checked')[0].value;
+        entry['gsx$rateunit'+i] = {$t: units};
+        var units2 = $('#'+operation+'_rate_units'+i+'b :radio:checked')[0].value;
+        if (units2 == 'acre'){ rate = rate * 2.47105; }
+        entry['gsx$rate'+i] = {$t: rate};
+    }
+    entry['gsx$crop'] = {$t: document.getElementById(operation+"_crop").value};
+
+    var units = $('#'+operation+'_total_rate_units :radio:checked')[0].value;
+    var rate = parseFloat(document.getElementById(operation+"_total_rate").value);
+    if (units == 'gpa'){ rate = rate * 9.3539; }
+    entry['gsx$totalrate'] = {$t: rate};
+
+    var units = $('#'+operation+'_pressure_units :radio:checked')[0].value;
+    var rate = parseFloat(document.getElementById(operation+"_pressure").value);
+    if (units == 'psi'){ rate = rate * 6.89475; }
+    entry['gsx$pressure'] = {$t: rate};
+
+entry['gsx$adjuvant'] = {$t: document.getElementById(operation+"_adjuvant").value};
+    entry['gsx$method'] = {$t: document.getElementById(operation+"_method").value};
+    entry['gsx$timing'] = {$t: document.getElementById(operation+"_timing").value};
+    entry['gsx$stage'] = {$t: document.getElementById(operation+"_stage").value};
+    entry['gsx$justify'] = {$t: document.getElementById(operation+"_justify").value};
+    entry['gsx$reference'] = {$t: document.getElementById(operation+"_reference").value}; 
+    entry['gsx$comments'] = {$t: document.getElementById(operation+"_comments").value};
+    for(var i=1;i<11;i++){
+       entry["gsx$target"+i] = {$t: document.getElementById(operation+"_target"+i).value};
+    }
+    entry['gsx$date'] = {$t:
+  $.datepicker.formatDate("yy/mm/dd", $("#ipm_datepicker").datepicker("getDate"))};
+
+    function good(entry){
+        alert('IPM Entry was saved!');
+        loadPreviousIpm();
+    }
+    function bad(error){
+        alert(error);
+    }
+      if (document.getElementById("ipm_rowid").value != "0"){
+          service.setHeaders({"If-Match": "*"});
+          service.updateEntry(entry.id.$t, entry, good, bad);
+          service.setHeaders({"If-Match": null});
+    } else {
+          service.insertEntry(url, entry, good, bad);
+    }
+}
+
+function saveManagementData(){
+    var foundEntry = null;
+    if (managementEntry){
+    for(var i=0, n=managementEntry.length; i < n; i++) {
+        var entry = managementEntry[i];
+        if (entry.gsx$year.$t == myYear  && entry.gsx$uniqueid.$t == document.getElementById("siteSelector").value){
+           foundEntry = entry;
+        }
+    }}
+    var url = 'https://spreadsheets.google.com/feeds/list/'+ man_sskey +'/2/private/full';
+    if (foundEntry){
+      entry = foundEntry;
+    } else {
+      entry = {xmlns: "http://www.w3.org/2005/Atom", 
+         xmlns$gsx: "http://schemas.google.com/spreadsheets/2006/extended"};
+      entry['gsx$uniqueid'] = {$t:document.getElementById("siteSelector").value};
+      entry['gsx$year'] = {$t:myYear};
+    }
+    entry['gsx$residueremoval'] = {$t:document.getElementById("residue_removal").value};
+    entry['gsx$residuehow'] = {$t:document.getElementById("residue_how").value};
+    entry['gsx$residuetype'] = {$t:document.getElementById("residue_type").value};
+    entry['gsx$residuevary'] = {$t:document.getElementById("residue_vary").value};
+    //entry['gsx$covercrop'] = {$t:document.getElementById("cover_crop").value};
+    entry['gsx$limeyear'] = {$t:document.getElementById("lime_year").value};
+    entry['gsx$residueremovalpercentage'] = {$t: $( "#residue_removed_slider" ).slider("value")};
+    entry['gsx$residueplantingpercentage'] = {$t: $( "#residue_planting_slider" ).slider("value")}; 
+    entry['gsx$organicamendments'] = {$t:document.getElementById("organic_amendments").value};
+    entry['gsx$organicamendmentstext'] = {$t:document.getElementById("organic_amendments_text").value};
+
+    entry['gsx$irrigation'] = {$t:document.getElementById("irrigation").value};
+    var depth = parseInt(document.getElementById("irrigation_amount").value);
+    if (depth > 0){
+       var units = $('#irrigation_units :radio:checked')[0].value;
+       if (units == 'in'){ depth = depth * 2.54; }
+       entry['gsx$irrigationamount'] = {$t:depth};
+    }
+    entry['gsx$irrigationmethod'] = {$t:document.getElementById("irrigation_method").value};
+
+    function good(entry){
+        alert('Management Entry was saved!');
+        loadPreviousManagement();
+    }
+    function bad(error){
+        alert(error);
+    }
+    if (foundEntry != null){
+          service.setHeaders({"If-Match": "*"});
+          service.updateEntry(entry.id.$t, entry, good, bad);
+          service.setHeaders({"If-Match": null});
+      } else {
+          service.insertEntry(url, entry, good, bad);
+      }
+}
+
+function saveOperationData(){
+    if (document.getElementById("operation").value == "invalid"){
+        alert("Invalid Operation Selected");
+        return;
+    }
+  
+    document.getElementById("previousOperationEdit").style.display = 'none';
+    var entry;
+    var url;
+    if (document.getElementById("rowid").value != "0"){ 
+        var myrowid = document.getElementById("rowid").value;
+        entry = getOperationEntryByRowId(myrowid);
+        url = entry.id.$t;
+     } else {
+      url = 'https://spreadsheets.google.com/feeds/list/'+ man_sskey +'/1/private/full';
+      entry = {xmlns: "http://www.w3.org/2005/Atom", 
+         xmlns$gsx: "http://schemas.google.com/spreadsheets/2006/extended"};
+      }
+      var operation = document.getElementById("operation").value;
+      if (operation == 'invalid'){
+          alert("Invalid Operation Selected");
+          return;
+      }
+      var optokens = operation.split("_");
+      //console.log(optokens[0]);
+      if (optokens[0] == "plant"){ 
+          var prate = document.getElementById("plant_rate").value;
+          prate = parseInt( prate.replace(',','') );
+          var units = $('#plant_rate_units :radio:checked')[0].value;
+          if (units == 'acre' || units == 'lbs'){ 
+             prate = prate * 2.47105; 
+          }
+          if (units == 'lbs'){
+             entry['gsx$plantrateunits'] = {$t: 'kg'};
+          } else {
+             entry['gsx$plantrateunits'] = {$t: 'seeds'};
+          }
+          entry['gsx$plantrate'] = {$t: prate};
+
+          entry['gsx$planthybrid'] = {$t: document.getElementById("plant_hybrid").value};
+          
+      }
+      if (optokens[0] == "harvest"){ 
+          
+      }
+      if (optokens[0] == "terminate"){ 
+          entry['gsx$terminatemethod'] = {$t: document.getElementById("terminate_method").value};
+      }
+      if (optokens[0] == "tillage"){
+          var depth = parseInt(document.getElementById("tillage_depth").value);
+          //console.log("Tillage Depth:"+ depth);
+          if (depth > 0){
+            var units = $('#tillage_depth_units :radio:checked')[0].value;
+            if (units == 'in'){ depth = depth * 2.54; }
+            entry['gsx$tillagedepth'] = {$t:depth};
+          }
+      }
+      if (optokens[0] == "soiladmend"){
+          var fertrate = parseFloat(document.getElementById("soiladmend_rate").value);
+          if (fertrate > 0){
+            var units = $('#soiladmend_rate_units :radio:checked')[0].value;
+            // Mg per hectre or tons per acre
+            if (units == 'acre'){ fertrate = fertrate / 0.446089; }
+            entry['gsx$soiladmendrate'] = {$t:fertrate};
+          }
+          entry['gsx$currentph'] = document.getElementById("soiladmend_current_ph").value;
+          entry['gsx$targetph'] = document.getElementById("soiladmend_target_ph").value;
+          entry['gsx$neutralindex'] = document.getElementById("soiladmend_neutral_index").value;
+
+      }
+      if (optokens[0] == "manure"){
+          var manure_rate = parseFloat(document.getElementById("manure_rate").value);
+            entry['gsx$manuretype'] = {$t:document.getElementById("manure_type").value};
+          if (manure_rate > 0){
+            var units = $('#manure_rate_units :radio:checked')[0].value;
+            // TODO
+            if (units == 'gpa'){ manure_rate = manure_rate * 1; }
+            if (units == 'tpa'){ manure_rate = manure_rate * 1; }
+            if (units == 'lph'){ manure_rate = manure_rate * 1; }
+            if (units == 'mgph'){ manure_rate = manure_rate * 1; }
+            entry['gsx$manurerate'] = {$t:manure_rate};
+            entry['gsx$manurerateunits'] = {$t:units};
+            for (var i=0; i < MANURE_ELEM.length; ++i) {
+               var elem = MANURE_ELEM[i];
+               var rate = parseFloat(document.getElementById("manure_"+elem+"_rate").value);
+               if (rate >= 0){
+                 entry['gsx$'+ elem] = {$t:rate};
+               }
+             }
+          }
+      }
+      if (optokens[0] == "fertilizer"){
+         /* Two options here, need to be clever... */
+         var prate_text = document.getElementById("product_rate").value;
+         var prodrate = parseFloat(document.getElementById("product_rate").value) * 1.12; 
+         var fieldappend = '';       
+         if (prate_text != ""){
+           if (prodrate < 1 || prodrate > 1000){
+             alert("Error, product rate outside of bounds 1-1000");
+             return;
+           }
+         } else {
+           prodrate = -1;
+           fieldappend = '_lbs';
+         }
+         entry['gsx$productrate'] = {$t:prodrate};
+
+         for (var i=0; i < FERTELEM.length; ++i) {
+           var elem = FERTELEM[i];
+           var rate = parseFloat(document.getElementById(elem+"_rate"+fieldappend).value);
+           if (rate >= 0){
+             entry['gsx$'+ elem] = {$t:rate};
+           }
+         }
+      }
+      entry['gsx$uniqueid'] = {$t:document.getElementById("siteSelector").value};
+      entry['gsx$operation'] = {$t:operation};
+      entry['gsx$year'] = {$t:myYear};
+      entry['gsx$comments'] = {$t: document.getElementById("comments").value};
+      entry['gsx$date'] = {$t:
+  $.datepicker.formatDate("yy/mm/dd", $("#datepicker").datepicker("getDate"))};
+      //console.log(entry);
+      function good(entry){
+        alert('Entry was saved!');
+        loadPreviousOperations();
+      }
+      function bad(error){
+         alert(error);
+      }
+      if (document.getElementById("rowid").value != "0"){
+          service.setHeaders({"If-Match": "*"});
+          service.updateEntry(url,entry, good, bad);
+          service.setHeaders({"If-Match": null});
+      } else {
+          service.insertEntry(url,entry, good, bad);
+      }
+  }
+
+  function adjustSiteSelector(){
+     var el = document.getElementById('siteSelector');
+
+     for (i=0;i<sites.length;i++){
+       var opt = document.createElement("option");
+       opt.text = sites[i];
+       opt.value = sitekeys[i];
+       el.options.add(opt);
+     }
+
+
+  }
+  
+/*
+ * Called with the results of the Site Metadata & History Form
+ */
+function showResults(result){
+    var sheetFeed = result.feed;
+    var list = sheetFeed.entry;
+    for(var i=0, n=list.length; i < n; i++) {
+       var entry = list[i];
+       //console.log(entry);
+       sites.push(entry.gsx$uniqueid.$t +": "+ entry.gsx$leadpi.$t );
+       sitekeys.push(entry.gsx$uniqueid.$t);
+    }
+    adjustSiteSelector();
+    var today = new Date();
+    setYear( today.getFullYear() ); 
+    setOperation("plant_corn");
+    setIpmOperation("herbicide");
+  }
+
+/* Called once google has all our apis loaded! */
+function bootstrap(){
+    $( "#tabs" ).tabs();
+    $( "#residue_removed_slider" ).slider({
+      value:0,
+      min: 0,
+      max: 100,
+      step: 5,
+      slide: function( event, ui ) {
+        $( "#residue_removed" ).val( ui.value +" %");
+      }
+    });
+     $( "#residue_planting_slider" ).slider({
+      value:100,
+      min: 0,
+      max: 100,
+      step: 5,
+      slide: function( event, ui ) {
+        $( "#residue_planting" ).val( ui.value +" %");
+      }
+    });
+   $( "#amount" ).val( "$" + $( "#slider" ).slider( "value" ) );
+    var today = new Date();
+    $( "#datepicker" ).datepicker();
+    $( "#datepicker" ).datepicker('setDate', today);
+    $( "#ipm_datepicker" ).datepicker();
+    $( "#ipm_datepicker" ).datepicker('setDate', today);
+    $("#years").buttonset();
+    $('#years input[type=radio]').change(function() {
+       setYear(this.value);  
+    });
+    $("#tillage_depth_units").buttonset();
+    $("#plant_rate_units").buttonset();
+    $("#irrigation_units").buttonset();
+    $("#herbicide_total_rate_units").buttonset();
+    $("#insecticide_total_rate_units").buttonset();
+    $("#fungicide_total_rate_units").buttonset();
+    $("#herbicide_pressure_units").buttonset();
+    $("#insecticide_pressure_units").buttonset();
+    $("#fungicide_pressure_units").buttonset();
+    $("#herbicide_rate_units1a").buttonset();
+    $("#herbicide_rate_units2a").buttonset();
+    $("#herbicide_rate_units3a").buttonset();
+    $("#herbicide_rate_units4a").buttonset();
+    $("#herbicide_rate_units1b").buttonset(); 
+    $("#herbicide_rate_units2b").buttonset();
+    $("#herbicide_rate_units3b").buttonset();
+    $("#herbicide_rate_units4b").buttonset();
+    //$("#pesticide_rate_units1").buttonset();
+    $("#insecticide_rate_units1a").buttonset();
+    $("#insecticide_rate_units1b").buttonset();
+    $("#fungicide_rate_units1a").buttonset();
+    $("#fungicide_rate_units1b").buttonset();
+
+    $("#soiladmend_rate_units").buttonset();
+    $("#manure_rate_units").buttonset();
+    url = 'https://spreadsheets.google.com/feeds/list/'+site_sskey+'/1/private/full';
+    var callback = function(response) {
+          if (response.oauthApprovalUrl) {
+            var personalize = document.getElementById('personalize');
+            personalize.href = response.oauthApprovalUrl;
+            showOneSection('approval');
+          } else if (response.feed) {
+            showOneSection('main');
+            SITES_FEED = response.feed;
+            showResults(response);
+          } else {
+            var main = document.getElementById('main');
+            var err = document.createTextNode('Something went wrong');
+            main.appendChild(err);
+            showOneSection('main');
+          }
+        };
+        service = new google.gdata.client.GoogleService('testapp');
+        service.useOAuth('google');
+        service.getFeed(url, callback, callback);
+
+  }
+
+/* called after gadgets are ready, now we need more apis */
+function myinit(){
+    google.load("gdata", "2.x");
+    google.load("jquery", "1.7.1");
+    google.load("jqueryui", "1.8.16");
+    google.setOnLoadCallback(bootstrap);
+
+}
+
+/* Wait until google gadgets is fired up */
+gadgets.util.registerOnLoadHandler(myinit);
+</script>
+    ]]>
+  </Content>
+</Module>​
