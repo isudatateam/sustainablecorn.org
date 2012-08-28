@@ -57,7 +57,9 @@ s.parentNode.insertBefore(ga, s);
 		<div id="col_body">
 			<div id="main_content" class="full"><!-- TemplateBeginEditable name="Main Content" -->
 			<h1>Speed Science</h1>
-		    <h3>  These fact sheets were developed and presented as &quot;Speed Science,&quot; at this project's 2012 annual conference in Wooster, Ohio. Videos of the presentations will also be available on this site soon.</h3>
+		    <h3>  These fact sheets were developed and presented as &quot;Speed Science,&quot; at this project's 2012 annual conference in Wooster, Ohio. </h3>
+		    <h3>Videos of the presentations will soon be available here.</h3>
+		    <p> <em>These fact sheets and videos are approved for use in educational, research and extension settings</em>.</p>
 			<blockquote>
 			  <p><a href="Arbuckle-0117-2012.pdf">Climate Change Beliefs, Concerns and Support for Adaptation and Mitigation among Corn Belt Farmers</a>, by Dr. J. Gordon Arbuckle Jr.*, Iowa State University.</br>
 			  </p>
@@ -69,6 +71,9 @@ s.parentNode.insertBefore(ga, s);
 			  <p><a href="Goodman-0115-2012.pdf">Understanding the Dynamics of Soil Diversity and Variability in the Field</a>, by Jenette Goodman and Dr. Phillip Owens, Purdue University.</p>
 			  <p><a href="Hintz-0122-2012.pdf">Science Teacher Education</a>, by Dr. Rachel Hintz, The Ohio State University.</p>
 			  <p><a href="Hobbs-0112-2012.pdf">Exploring Relationships among Farmer Perceptions on Climate Change</a>, by Jon Hobbs, J. Gordon Arbuckle and Lois Wright Morton, Iowa State University.</p>
+			  <p><a href="Kladivko-0110-2012.pdf">Cover Crops</a>, by Dr. Eileen J. Kladivko, Purdue University.</p>
+			  <p><a href="Kravchenko-0121-2012.pdf">Soil Organic Carbon Cycle</a>, by Dr. Sasha Kravchenko, Michigan State University.</p>
+			  <p>&nbsp;</p>
 			  <p>&nbsp;</p>
 			  <p>*  The farmer survey noted in this fact sheet was a collaborative effort between several social scientists from various universities: Drs. John Tyndall, Tricia Knoot and Lois Wright Morton, Iowa State University; Linda Prokopy, Purdue University; and Tonya Haigh and Cody Knutson, University of Nebraska.</p>
 		    </blockquote>
