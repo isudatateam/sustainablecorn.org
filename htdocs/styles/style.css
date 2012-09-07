@@ -58,7 +58,7 @@ div.clear {clear:both;}
 h1, h2, h3, h4, h5, h6 {margin:0; padding:0; font-weight:normal;}
 h1 {font-size:2em; margin-bottom:0.5em;}
 h2 {font-size:1.2em; text-transform:uppercase; font-weight:bold;}
-div#left_col h2 {border-bottom:1px solid #fff; padding:4px 0 4px 10px;}
+div#left_col h2 {border-bottom:0px solid #fff; padding:4px 0 4px 10px;}
 div#right_side h2, h2.right {
 	padding:4px 0 4px 10px;
 	border-top-width: 1px;
@@ -67,7 +67,7 @@ div#right_side h2, h2.right {
 }
 h3 {font-weight:bold; font-style:italic; font-size:1.2em; margin:1.5em 0 0.7em 0; color:#3474A4;}
 h4 {font-weight:bold; text-transform:uppercase; font-size:0.9em; margin:1.5em 0 0.7em 0; color:#000;}
-div#left_col h4 {border-bottom:1px solid #fff; margin:0 0 0 0; padding:4px 0 4px 10px;}
+div#left_col h4 {border-bottom:0px solid #fff; margin:0 0 0 0; padding:4px 0 4px 10px;}
 h5 {font-size:1em; font-style:italic; margin:1.5em 0 0.7em 0; padding:4px 4px 4px 10px; color:#3474A4;}
 p {line-height:1.5em; margin:0 0 1em 0;}
 
@@ -79,11 +79,11 @@ a, a:active {color:#CC6633;}
 a:visited {color:#CC6633;}
 div#left_col a {color:#fff; text-decoration:none; border:none;}
 div#left_col a:hover {color:#ccffff;}
-div#left_col h2:hover {border-bottom:1px solid #ccffff;}
+div#left_col h2:hover {border-bottom:0px solid #ccffff;}
 a:link img, a:visited img {border: 0;}
 
 ul#latest_news_list {margin:0 0 1em 0; padding:0; font-size:0.9em;}
-ul#latest_news_list li {margin:0 10px; padding:4px 0; list-style:none; border-top:1px solid #336699;}
+ul#latest_news_list li {margin:0 10px; padding:4px 0; list-style:none; border-top:0px solid #336699;}
 ul#latest_news_list li a {
 	display:block;
 	text-decoration:none;
