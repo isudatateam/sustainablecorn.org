@@ -39,15 +39,15 @@ s.parentNode.insertBefore(ga, s);
     
     <div id="left_col">
 		<div id="fast_clicks">
-<h2 align="left">Field Research</h2>
+<h2 align="left"><a href="../fieldtrials.html">Field Research</a></h2>
 <p align="left">&nbsp;</p>
-<h2 align="left">Analysis &amp; Modeling</h2>
+<h2 align="left"><a href="../systemsanalysis.html">Analysis &amp; Modeling</a></h2>
 <p align="left">&nbsp;</p>
-<h2 align="left">Social &amp; Economic Research</h2>
+<h2 align="left"><a href="../social-and-economic.html">Social &amp; Economic Research</a></h2>
 <p align="left">&nbsp;</p>
-<h2 align="left">Education</h2>
+<h2 align="left"><a href="../education.html">Education</a></h2>
 <p align="left">&nbsp;</p>
-<h2 align="left">Farmers &amp; Industry</h2>
+<h2 align="left"><a href="../farmers-and-industry.html">Farmers &amp; Industry</a></h2>
 <p align="left">&nbsp;</p>
 
 <h2><a href="../about.html">About</a></h2>
