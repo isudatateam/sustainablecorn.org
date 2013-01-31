@@ -52,7 +52,7 @@ ul.MenuBarHorizontal ul
 	font-size: 100%;
 	z-index: 1020;
 	cursor: default;
-	width: auto;
+	width: 40px;
 	position: absolute;
 	left: -1000em;
 }
