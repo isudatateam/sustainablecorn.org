@@ -68,19 +68,36 @@ Landscape
 <div id="sprynav"> 
   <ul id="MenuBar1" class="MenuBarHorizontal">
     <li>
-      <div align="center"><a href="#">Home</a></div>
+      <div align="center"><a href="#">Home</a>        </div>
     </li>
     <li>
-      <div align="center"><a href="../about.html">About</a>        </div>
+      <div align="center"><a href="../about.html" class="MenuBarItemSubmenu">About</a>
+        <ul>
+          <li><a href="../about_project.html">The Project</a></li>
+          <li><a href="#">The People</a></li>
+        </ul>
+      </div>
     </li>
     <li>
-      <div align="center"><a href="#">News</a></div>
+      <div align="center"><a href="#" class="MenuBarItemSubmenu">News</a>
+        <ul>
+          <li><a href="#">In The News</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
     </li>
     <li>
       <div align="center"><a href="#">Videos</a></div>
     </li>
     <li>
-      <div align="center"><a href="#">Publications</a>        </div>
+      <div align="center"><a href="#" class="MenuBarItemSubmenu">Publications</a>
+        <ul>
+          <li><a href="#">Fact Sheets</a></li>
+          <li><a href="#">Posters</a></li>
+          <li><a href="#">Peer-reviewed Publications</a></li>
+          <li><a href="#">Research Summaries</a></li>
+        </ul>
+      </div>
     </li>
     <li>
       <div align="center"><a href="#">Resources</a></div>
@@ -118,7 +135,7 @@ Landscape
   </ul>
 </div>
 <div id="maincontentrightsub">
-  <h2>Sustainable Corn BLOG</h2>
+  <h2><a href="http://www.sustainablecorn.org/blog/">Sustainable Corn BLOG</a></h2>
   <h2>&nbsp;</h2>
   <p>Coming Soon!</p>
 </div>
