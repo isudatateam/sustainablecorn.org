@@ -67,7 +67,6 @@ ul.MenuBarHorizontal ul li
 {
 	width: 120px;
 	clear: left;
-	margin-top: 20px;
 }
 /* Submenus should appear slightly overlapping to the right (95%) and up (-5%) */
 ul.MenuBarHorizontal ul ul
