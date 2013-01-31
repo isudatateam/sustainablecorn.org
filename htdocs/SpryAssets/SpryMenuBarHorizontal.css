@@ -52,9 +52,10 @@ ul.MenuBarHorizontal ul
 	font-size: 100%;
 	z-index: 1020;
 	cursor: default;
-	width: 40px;
+	width: 120px;
 	position: absolute;
 	left: -1000em;
+	background-color: #33F;
 }
 /* Submenu that is showing with class designation MenuBarSubmenuVisible, we set left to auto so it comes onto the screen below its parent menu item */
 ul.MenuBarHorizontal ul.MenuBarSubmenuVisible
@@ -64,7 +65,7 @@ ul.MenuBarHorizontal ul.MenuBarSubmenuVisible
 /* Menu item containers are same fixed width as parent */
 ul.MenuBarHorizontal ul li
 {
-	width: auto;
+	width: 120px;
 	clear: left;
 }
 /* Submenus should appear slightly overlapping to the right (95%) and up (-5%) */
