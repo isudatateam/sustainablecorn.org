@@ -174,3 +174,8 @@ ul.MenuBarHorizontal iframe
 	background: #FFF;
 	}
 }
+ul.MenuBarHorizontal ul a {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #336799;
+	background-color: #C8DBE3;
+}
