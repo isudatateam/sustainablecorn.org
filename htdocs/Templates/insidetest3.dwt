@@ -68,7 +68,7 @@ Landscape
 <div id="sprynav"> 
   <ul id="MenuBar1" class="MenuBarHorizontal">
     <li>
-      <div align="center"><a href="#">Home</a>        </div>
+      <div align="center"><a href="http://www.sustainablecorn.org/">Home</a>        </div>
     </li>
     <li>
       <div align="center"><a href="../about.html" class="MenuBarItemSubmenu">About</a>
