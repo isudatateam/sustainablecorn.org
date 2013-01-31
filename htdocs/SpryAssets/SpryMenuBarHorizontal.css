@@ -89,6 +89,7 @@ ul.MenuBarHorizontal ul.MenuBarSubmenuVisible ul.MenuBarSubmenuVisible
 ul.MenuBarHorizontal ul
 {
 	border: 1px solid #CCC;
+	background-color: #009;
 }
 /* Menu items are a light gray block with padding and no text decoration */
 ul.MenuBarHorizontal a
@@ -166,8 +167,8 @@ ul.MenuBarHorizontal iframe
 {
 	ul.MenuBarHorizontal li.MenuBarItemIE
 	{
-		display: inline;
-		f\loat: left;
-		background: #FFF;
+	display: inline;
+	f\loat: left;
+	background: #FFF;
 	}
 }
