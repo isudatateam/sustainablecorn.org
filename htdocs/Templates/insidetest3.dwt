@@ -71,7 +71,7 @@ Landscape
       <div align="center"><a href="http://www.sustainablecorn.org/">Home</a>        </div>
     </li>
     <li>
-      <div align="center"><a href="../About/about.html" class="MenuBarItemSubmenu">About</a>
+      <div align="center"><a href="#" class="MenuBarItemSubmenu">About</a>
         <ul>
           <li><a href="../About/Project.html">The Project</a></li>
           <li><a href="../About/People.html">The People</a></li>
