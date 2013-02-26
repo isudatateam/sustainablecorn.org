@@ -144,7 +144,11 @@ h2 {
 	text-transform:none;
 	font-weight:bold;
 }
-div#left_col h2 {border-bottom:0px solid #fff; padding:4px 0 4px 10px;}
+div#left_col h2 {
+	border-bottom: 0px solid #fff;
+	padding: 4px 0 4px 10px;
+	color: #336799;
+}
 div#right_side h2, h2.right {
 	padding:4px 0 4px 10px;
 	border-top-width: 1px;
