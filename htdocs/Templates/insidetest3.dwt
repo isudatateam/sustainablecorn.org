@@ -140,7 +140,7 @@ s.parentNode.insertBefore(ga, s);
 </div>
 <!-- TemplateEndEditable --><!-- TemplateBeginEditable name="EditRegion5" -->
 <div id="maincontentrightsub">
-  <h2 align="center"><a href="http://www.sustainablecorn.org/blog/">Sustainable Corn BLOG</a></h2>
+  <h2 align="center"><a href="http://www.sustainablecorn.org/blog/" target="_blank">Sustainable Corn BLOG</a></h2>
   <h2 align="center">&nbsp;</h2>
   <p align="center">Headlines</p>
 </div>
