@@ -13,7 +13,10 @@ div#left_col {padding:57px 0 0 10px; width:150px; float:left;}
 div#right_col {margin:0 7px 0 170px; background:#fff no-repeat -203px 0; color:#000;}
 div#right_side {float:right; width:195px; margin:7px 0px 10px 0; padding-top:55px}
 div#main_content {margin:7px 222px 0 20px; padding-bottom:1px; padding-top:20px}
-div#main_content.full {margin:7px 20px 0 20px; padding-bottom:1px;}
+div#main_content.full {
+	margin:7px 20px 0 20px;
+	padding-bottom:1px;
+}
 
 /*details*/
 div#seal {text-align:center;}
