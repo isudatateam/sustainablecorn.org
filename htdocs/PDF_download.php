@@ -7,7 +7,7 @@ function endsWith($haystack, $needle) {
 
 if (isset($_GET["d"])){
   header("Content-type: application/pdf");
-  if (!endsWith($f, ".pdf")){
+  if (endsWith($f, ".pdf")){
     die(file_get_contents($f));
   }
   die();
