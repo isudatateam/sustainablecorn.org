@@ -1,3 +1,6 @@
+<?php
+$f = isset($_GET["f"]) ? htmlentities($_GET["f"]) : null;
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/insidetest3.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
@@ -5,17 +8,17 @@
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Sustainablecorn.org</title>
 <!-- InstanceEndEditable -->
-<link rel="stylesheet" type="text/css" href="styles/style2.css" />
+<link rel="stylesheet" type="text/css" href="/styles/style2.css" />
 <!--[if lte IE 6]>
 <link rel="stylesheet" type="text/css" href="/styles/style-ie.css" />
 <![endif]-->
 <meta name="description" content="Homepage for sustainablecorn.org." />
 <meta name="keywords" content="sustainablecorn" />
 <meta name="keywords" content="corn, sustainable agriculture, corn research" />
-<script language="javascript" type="text/javascript" src="js/jq.js"></script>
-<script language="javascript" type="text/javascript" src="js/jq.cycle.js"></script>
-<script language="javascript" type="text/javascript" src="js/global.js"></script>
-<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript" src="/js/jq.js"></script>
+<script language="javascript" type="text/javascript" src="/js/jq.cycle.js"></script>
+<script language="javascript" type="text/javascript" src="/js/global.js"></script>
+<script src="/SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
 <!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
 <script type="text/javascript">
 
@@ -32,40 +35,40 @@ s.parentNode.insertBefore(ga, s);
    })();
 
 </script>
-<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+<link href="/SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 <div id="container">
-	<div id="header"><a href="index.html"><img src="img/headerlogo.jpg" width="1080" height="219"/ border="0"></a></div>
+	<div id="header"><a href="/index.html"><img src="/img/headerlogo.jpg" width="1080" height="219"/ border="0"></a></div>
     <div></div>
     
 <div id="left_col">
 		<div id="fast_clicks">
 <h2 align="left">&nbsp;</h2>
 <p align="left">&nbsp;</p>
-<h2 align="left"><a href="conf-pages/2014NationalConference.html">Resilient Agriculture Conference</a></h2>
+<h2 align="left"><a href="/conf-pages/2014NationalConference.html">Resilient Agriculture Conference</a></h2>
 <br />
 <h2 align="left">In-field Management</h2>
-<p align="left" id="leftsubnav"><a href="In_Field_Management/Extended_crop_rotations.html">Extended Crop Rotations</a><br />
-  <a href="In_Field_Management/cover_crops.html">Cover Crops</a><br />
-  <a href="In_Field_Management/tillage_management.html">Tillage Management</a><br />
-  <a href="In_Field_Management/drainage_water_management.html">Drainage Water Management</a><br />
-  <a href="In_Field_Management/nitrogen_management.html">Nitrogen Management</a><br />
-  <a href="In_Field_Management/landscape.html">Landscape</a><br />
-  <a href="In_Field_Management/integrated_pest_management.html">Integrated Pest Management</a><br />
-  <a href="In_Field_Management/organic.html">Organic</a><br /></p>
-<h2 align="left"><a href="What_Farmers_are_Saying/Index.html">What Farmers are Saying</a></h2>
-<p align="left" id="leftsubnav"><a href="What_Farmers_are_Saying/Farmer_Survey.html">Farmer Survey</a>
+<p align="left" id="leftsubnav"><a href="/In_Field_Management/Extended_crop_rotations.html">Extended Crop Rotations</a><br />
+  <a href="/In_Field_Management/cover_crops.html">Cover Crops</a><br />
+  <a href="/In_Field_Management/tillage_management.html">Tillage Management</a><br />
+  <a href="/In_Field_Management/drainage_water_management.html">Drainage Water Management</a><br />
+  <a href="/In_Field_Management/nitrogen_management.html">Nitrogen Management</a><br />
+  <a href="/In_Field_Management/landscape.html">Landscape</a><br />
+  <a href="/In_Field_Management/integrated_pest_management.html">Integrated Pest Management</a><br />
+  <a href="/In_Field_Management/organic.html">Organic</a><br /></p>
+<h2 align="left"><a href="/What_Farmers_are_Saying/Index.html">What Farmers are Saying</a></h2>
+<p align="left" id="leftsubnav"><a href="/What_Farmers_are_Saying/Farmer_Survey.html">Farmer Survey</a>
 <h2 align="left">Weather &amp; Agriculture</h2>
-<p align="left" id="leftsubnav"><a href="Weather&amp;Agriculture/Climate-Facts.html">Climate Facts</a><br />
-  <a href="Weather&amp;Agriculture/Midwest-Climate-Information.html">State &amp; Regional Climate Information</a><br />
-  <a href="Weather&amp;Agriculture/Weather-Outlook_Current-Conditions.html">Weather Outlook &amp; Current Conditions
+<p align="left" id="leftsubnav"><a href="/Weather&amp;Agriculture/Climate-Facts.html">Climate Facts</a><br />
+  <a href="/Weather&amp;Agriculture/Midwest-Climate-Information.html">State &amp; Regional Climate Information</a><br />
+  <a href="/Weather&amp;Agriculture/Weather-Outlook_Current-Conditions.html">Weather Outlook &amp; Current Conditions
   </a></p>
-<h2 align="left"><a href="About-Project/Extension_Farmers.html">Project Outreach to Farmers</a></h2>
+<h2 align="left"><a href="/About-Project/Extension_Farmers.html">Project Outreach to Farmers</a></h2>
 <br />
 <h2><a href="https://sites.google.com/site/sustainablecorn/" target="_blank">Internal Log-In</a></h2><br />
-<p><a href="https://twitter.com/sustainablecorn"><img src="img/Twitter.png" width="67" height="67" alt="Find-us-on-Twitter" />Find us on Twitter</a></p>
+<p><a href="https://twitter.com/sustainablecorn"><img src="/img/Twitter.png" width="67" height="67" alt="Find-us-on-Twitter" />Find us on Twitter</a></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <h2>&nbsp;</h2>
@@ -79,71 +82,50 @@ s.parentNode.insertBefore(ga, s);
     <li>
       <div align="center"><a href="#" class="MenuBarItemSubmenu">About</a>
         <ul>
-          <li><a href="About-Project/Index.html">The Project</a></li>
-          <li><a href="About-People/Index.html">The People</a></li>
+          <li><a href="/About-Project/Index.html">The Project</a></li>
+          <li><a href="/About-People/Index.html">The People</a></li>
         </ul>
       </div>
     </li>
     <li>
       <div align="center"><a href="#" class="MenuBarItemSubmenu">News</a>
         <ul>
-          <li><a href="news/Project-News.html">Project News</a></li>
-          <li><a href="news/Related-Stories.html">Related News</a></li>
-          <li><a href="news/Press-Room.html">Press</a></li>
+          <li><a href="/news/Project-News.html">Project News</a></li>
+          <li><a href="/news/Related-Stories.html">Related News</a></li>
+          <li><a href="/news/Press-Room.html">Press</a></li>
         </ul>
       </div>
     </li>
     <li>
-      <div align="center"><a href="Videos/Index.html">Videos</a></div>
+      <div align="center"><a href="/Videos/Index.html">Videos</a></div>
     </li>
     <li>
       <div align="center"><a href="#" class="MenuBarItemSubmenu">Publications</a>
         <ul>
-          <li><a href="Publications/Fact_Sheets.html">Fact Sheets</a></li>
-          <li><a href="Publications/Posters.html">Posters</a></li>
-          <li><a href="Publications/Peer-reviewed_Publications.html">Peer-reviewed Publications</a></li>
-          <li><a href="Publications/Research_Summaries.html">Research Summaries</a></li>
+          <li><a href="/Publications/Fact_Sheets.html">Fact Sheets</a></li>
+          <li><a href="/Publications/Posters.html">Posters</a></li>
+          <li><a href="/Publications/Peer-reviewed_Publications.html">Peer-reviewed Publications</a></li>
+          <li><a href="/Publications/Research_Summaries.html">Research Summaries</a></li>
         </ul>
       </div>
     </li>
     <li>
-      <div align="center"><a href="resources/Index.html">Resources</a></div>
+      <div align="center"><a href="/resources/Index.html">Resources</a></div>
     </li>
     <li>
-      <div align="center"><a href="Contact/Index.html">Contact</a></div>
+      <div align="center"><a href="/Contact/Index.html">Contact</a></div>
     </li>
   </ul>
 </div>
 <div id="right_col"><!-- InstanceBeginEditable name="EditRegion3" -->
   <div id="maincontentleft"><br />
-    <h1>PDF Download</h1>
-    <p>.</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
+    <h3>View PDF (<?php echo $f;?>)</h3>
+
+    <p>Direct link to download: <a href="<?php echo $f;?>">download PDF</a>.</p>
+
+    <iframe src="<?php echo $f;?>" width="800px" height="600px" >
+</iframe>
   </div>
-<!-- InstanceEndEditable --><!-- InstanceBeginEditable name="EditRegion4" -->
-<div id="maincontentright">
-  <h2>&nbsp;</h2>
-  <h2>We're scientists and farmers working together to create a suite of practices for corn-based systems that:</h2>
-  <ul>
-    <li>are resilient in times of drought </li>
-    <li>reduce soil and nutrient losses under saturated soil conditions</li>
-    <li>reduce farm field nitrogen losses</li>
-    <li>retain carbon in the soil</li>
-    <li>ensure crop and soil productivity</li>
-  </ul>
-</div>
-<!-- InstanceEndEditable --><!-- InstanceBeginEditable name="EditRegion5" -->
-<div id="maincontentrightsub">
-  <h2 align="left"><a href="http://www.sustainablecorn.org/blog/" target="_blank">Sustainable Corn BLOG</a></h2>
-  <p>Farmers and scientists in the Corn Belt discussing cover crops, weather, tillage, drainage water managment and much more.
-</p>
-  <p>&nbsp; </p>
-  <h2 align="center"><a href="http://www.youtube.com/sustainablecorn" target="_blank">Sustainable Corn YouTube Channel</a></h2>
-</div><!-- InstanceEndEditable -->
 <div class="clear">
   <div align="center">SUSTAINABLECORN.ORG    | <a href="mailto:lynnlaws@iastate.edu">Website Administrator</a><br />
     USDA-NIFA Award No.: 2011-68002-30190 </div>
