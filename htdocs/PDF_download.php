@@ -133,9 +133,9 @@ s.parentNode.insertBefore(ga, s);
   <div id="maincontentleft"><br />
     <h3>View PDF (<?php echo $f;?>)</h3>
 
-    <p>Direct link to download: <a href="/PDF_download.php?f=<?php echo $f;?>&amp;d=true">download PDF</a>.</p>
+    <p>Direct link to download: <a href="/PDF_download.php?f=<?php echo $f;?>&d=true">download PDF</a>.</p>
 
-    <iframe src="/PDF_download.php?f=<?php echo $f;?>&amp;d=true" width="800px" height="600px" >
+    <iframe src="/PDF_download.php?f=<?php echo $f;?>&d=true" width="800px" height="600px" >
 </iframe>
   </div>
 <div class="clear">
