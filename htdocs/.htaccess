@@ -1,2 +1,2 @@
 RewriteEngine On
-RewriteRule ^pdf(.*pdf)$ /PDF_download.php?f=$1 [QSA]
+RewriteRule ^(.*\.pdf)$ /PDF_download.php?f=$1

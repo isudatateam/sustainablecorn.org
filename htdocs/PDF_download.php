@@ -1,5 +1,16 @@
 <?php
 $f = isset($_GET["f"]) ? htmlentities($_GET["f"]) : null;
+function endsWith($haystack, $needle) {
+    // search forward starting from end minus needle length characters
+    return $needle === "" || strpos($haystack, $needle, strlen($haystack) - strlen($needle)) !== FALSE;
+}
+
+if (isset($_GET["d"])){
+  header("Content-type: application/pdf");
+  if (!endsWith($f, ".pdf")){
+    die(file_get_contents($f));
+  }
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/insidetest3.dwt" codeOutsideHTMLIsLocked="false" -->
@@ -121,9 +132,9 @@ s.parentNode.insertBefore(ga, s);
   <div id="maincontentleft"><br />
     <h3>View PDF (<?php echo $f;?>)</h3>
 
-    <p>Direct link to download: <a href="<?php echo $f;?>">download PDF</a>.</p>
+    <p>Direct link to download: <a href="/PDF_download.php?f=<?php echo $f;?>&amp;d=true">download PDF</a>.</p>
 
-    <iframe src="<?php echo $f;?>" width="800px" height="600px" >
+    <iframe src="/PDF_download.php?f=<?php echo $f;?>&amp;d=true" width="800px" height="600px" >
 </iframe>
   </div>
 <div class="clear">
