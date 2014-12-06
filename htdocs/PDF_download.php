@@ -12,6 +12,14 @@ if (isset($_GET["d"])){
   }
   die();
 }
+if (isset($_SERVER["PATH_INFO"])){
+  header("Content-type: application/pdf");
+  $f = $_SERVER["PATH_INFO"];
+  if (endsWith($f, ".pdf")){
+    die(file_get_contents(".".$f));
+  }
+  die();
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/insidetest3.dwt" codeOutsideHTMLIsLocked="false" -->
@@ -133,7 +141,7 @@ s.parentNode.insertBefore(ga, s);
   <div id="maincontentleft"><br />
     <h3>View PDF (<?php echo $f;?>)</h3>
 
-    <p>Direct link to download: <a href="/PDF_download.php?f=<?php echo $f;?>&d=true">download PDF</a>.</p>
+    <p>Having trouble viewing this PDF below? Here is a direct link to <a href="/PDF_download.php/<?php echo $f;?>">download the PDF</a>.</p>
 
     <iframe src="/PDF_download.php?f=<?php echo $f;?>&d=true" width="800px" height="600px" >
 </iframe>
