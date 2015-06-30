@@ -148,7 +148,11 @@ s.parentNode.insertBefore(ga, s);
   </div>
 <div class="clear">
   <div align="center">SUSTAINABLECORN.ORG    | <a href="mailto:lynnlaws@iastate.edu">Website Administrator</a><br />
-    USDA-NIFA Award No.: 2011-68002-30190 </div>
+This material is based upon work that is supported by the National Institute of Food and<br />
+Agriculture, U.S. Department of Agriculture, under award number 2011-68002-30190<br />
+Any opinions, findings, conclusions, or recommendations expressed on this website are those of the author(s)<br />
+and do not necessarily reflect the view of the U.S. Department of Agriculture.
+</div>
 </div>
 </div>
 </div>
