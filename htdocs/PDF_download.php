@@ -81,9 +81,9 @@ s.parentNode.insertBefore(ga, s);
 <h2 align="left"><a href="/What_Farmers_are_Saying/Index.html">What Farmers are Saying</a></h2>
 <p align="left" id="leftsubnav"><a href="/What_Farmers_are_Saying/Farmer_Survey.html">Farmer Survey</a>
 <h2 align="left">Weather &amp; Agriculture</h2>
-<p align="left" id="leftsubnav"><a href="/Weather&amp;Agriculture/Climate-Facts.html">Climate Facts</a><br />
-  <a href="/Weather&amp;Agriculture/Midwest-Climate-Information.html">State &amp; Regional Climate Information</a><br />
-  <a href="/Weather&amp;Agriculture/Weather-Outlook_Current-Conditions.html">Weather Outlook &amp; Current Conditions
+<p align="left" id="leftsubnav"><a href="/Weather-and-Ag/Climate-Facts.html">Climate Facts</a><br />
+  <a href="/Weather-and-Ag/Midwest-Climate-Information.html">State &amp; Regional Climate Information</a><br />
+  <a href="/Weather-and-Ag/Weather-Outlook_Current-Conditions.html">Weather Outlook &amp; Current Conditions
   </a></p>
 <h2 align="left"><a href="/About-Project/Extension_Farmers.html">Project Outreach to Farmers</a></h2>
 <br />
