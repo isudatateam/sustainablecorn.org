@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sustainablecorn.org  BLOG &#187; soil temperatures</title>
+	<atom:link href="https://sustainablecorn.org/blog/?feed=rss2&#038;tag=soil-temperatures" rel="self" type="application/rss+xml" />
+	<link>https://sustainablecorn.org/blog</link>
+	<description>Conversations on our research, crop resiliency and climate in the Corn Belt</description>
+	<lastBuildDate>Wed, 30 Aug 2017 19:21:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.6</generator>
+		<item>
+		<title>Waiting for Spring</title>
+		<link>https://sustainablecorn.org/blog/?p=451</link>
+		<comments>https://sustainablecorn.org/blog/?p=451#comments</comments>
+		<pubDate>Tue, 04 Mar 2014 19:36:49 +0000</pubDate>
+		<dc:creator>Jim Angel</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Weather and Agriculture]]></category>
+		<category><![CDATA[snow]]></category>
+		<category><![CDATA[soil moisture]]></category>
+		<category><![CDATA[soil temperatures]]></category>
+		<category><![CDATA[spring]]></category>
+		<category><![CDATA[winter]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=451</guid>
+		<description><![CDATA[This winter has been significantly colder than average across the Corn Belt. The December-February temperatures were 9 to 12 degrees below average across Minnesota, Wisconsin, eastern Iowa, and northern Illinois. The rest of the Corn Belt was 6 to 9 &#8230; <a href="https://sustainablecorn.org/blog/?p=451">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=451</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

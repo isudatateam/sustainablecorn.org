@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sustainablecorn.org  BLOG &#187; Soybeans</title>
+	<atom:link href="https://sustainablecorn.org/blog/?feed=rss2&#038;tag=soybeans" rel="self" type="application/rss+xml" />
+	<link>https://sustainablecorn.org/blog</link>
+	<description>Conversations on our research, crop resiliency and climate in the Corn Belt</description>
+	<lastBuildDate>Wed, 30 Aug 2017 19:21:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.6</generator>
+		<item>
+		<title>Is there an advantage to early soybean planting?</title>
+		<link>https://sustainablecorn.org/blog/?p=488</link>
+		<comments>https://sustainablecorn.org/blog/?p=488#comments</comments>
+		<pubDate>Thu, 01 May 2014 15:19:14 +0000</pubDate>
+		<dc:creator>Melissa Widhalm</dc:creator>
+				<category><![CDATA[Crop Progress]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Weather and Agriculture]]></category>
+		<category><![CDATA[Climate]]></category>
+		<category><![CDATA[Planting Date]]></category>
+		<category><![CDATA[Soybeans]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=488</guid>
+		<description><![CDATA[Selecting an early versus late planting date could have implications for water availability and plant stress throughout the growing season. U2U team members Tapan Pathak and Roger Elmore at the University of Nebraska-Lincoln looked at the potential advantage of early &#8230; <a href="https://sustainablecorn.org/blog/?p=488">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=488</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

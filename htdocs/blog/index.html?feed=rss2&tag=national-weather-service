@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sustainablecorn.org  BLOG &#187; National Weather Service</title>
+	<atom:link href="https://sustainablecorn.org/blog/?feed=rss2&#038;tag=national-weather-service" rel="self" type="application/rss+xml" />
+	<link>https://sustainablecorn.org/blog</link>
+	<description>Conversations on our research, crop resiliency and climate in the Corn Belt</description>
+	<lastBuildDate>Wed, 30 Aug 2017 19:21:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.6</generator>
+		<item>
+		<title>NOAA Seasonal Outlooks &#8211; A Cool Finish To The Corn Crop?</title>
+		<link>https://sustainablecorn.org/blog/?p=568</link>
+		<comments>https://sustainablecorn.org/blog/?p=568#comments</comments>
+		<pubDate>Tue, 22 Jul 2014 01:02:35 +0000</pubDate>
+		<dc:creator>Jim Angel</dc:creator>
+				<category><![CDATA[Weather and Agriculture]]></category>
+		<category><![CDATA[National Weather Service]]></category>
+		<category><![CDATA[seasonal outlook]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=568</guid>
+		<description><![CDATA[On July 17, 2014, the NOAA Climate Prediction Center released their outlook for August and beyond. Currently, we have significant heat through the High Plains and the Midwest. But it will be short-lived. The NWS forecast show cooler conditions returning &#8230; <a href="https://sustainablecorn.org/blog/?p=568">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=568</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

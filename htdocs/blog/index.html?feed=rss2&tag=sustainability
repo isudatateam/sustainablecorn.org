@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sustainablecorn.org  BLOG &#187; sustainability</title>
+	<atom:link href="https://sustainablecorn.org/blog/?feed=rss2&#038;tag=sustainability" rel="self" type="application/rss+xml" />
+	<link>https://sustainablecorn.org/blog</link>
+	<description>Conversations on our research, crop resiliency and climate in the Corn Belt</description>
+	<lastBuildDate>Wed, 30 Aug 2017 19:21:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.6</generator>
+		<item>
+		<title>Suggestions for Young Farmers?</title>
+		<link>https://sustainablecorn.org/blog/?p=484</link>
+		<comments>https://sustainablecorn.org/blog/?p=484#comments</comments>
+		<pubDate>Fri, 11 Apr 2014 21:23:55 +0000</pubDate>
+		<dc:creator>admin</dc:creator>
+				<category><![CDATA[Farmers and Climate Change]]></category>
+		<category><![CDATA[Weather and Agriculture]]></category>
+		<category><![CDATA[advice]]></category>
+		<category><![CDATA[crop insurance]]></category>
+		<category><![CDATA[crops]]></category>
+		<category><![CDATA[extreme weather]]></category>
+		<category><![CDATA[farmer]]></category>
+		<category><![CDATA[farm management]]></category>
+		<category><![CDATA[future]]></category>
+		<category><![CDATA[future farmers]]></category>
+		<category><![CDATA[profitability]]></category>
+		<category><![CDATA[soil]]></category>
+		<category><![CDATA[soil health]]></category>
+		<category><![CDATA[stewardship]]></category>
+		<category><![CDATA[suggestions]]></category>
+		<category><![CDATA[sustainability]]></category>
+		<category><![CDATA[tips]]></category>
+		<category><![CDATA[young farmers]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=484</guid>
+		<description><![CDATA[This spring I had the pleasure of interviewing a diverse group of established cash crop farmers for a Sustainable Corn Project video. These farmers strongly recommended purchasing crop insurance. Farmers run the risk of losing a large amount of money &#8230; <a href="https://sustainablecorn.org/blog/?p=484">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=484</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

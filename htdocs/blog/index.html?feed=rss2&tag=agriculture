@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sustainablecorn.org  BLOG &#187; agriculture</title>
+	<atom:link href="https://sustainablecorn.org/blog/?feed=rss2&#038;tag=agriculture" rel="self" type="application/rss+xml" />
+	<link>https://sustainablecorn.org/blog</link>
+	<description>Conversations on our research, crop resiliency and climate in the Corn Belt</description>
+	<lastBuildDate>Wed, 30 Aug 2017 19:21:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.6</generator>
+		<item>
+		<title>Cover Crops and Climate Change: The Value of Modeling</title>
+		<link>https://sustainablecorn.org/blog/?p=647</link>
+		<comments>https://sustainablecorn.org/blog/?p=647#comments</comments>
+		<pubDate>Wed, 18 Feb 2015 17:15:04 +0000</pubDate>
+		<dc:creator>Andrea Basche</dc:creator>
+				<category><![CDATA[Cover Crops]]></category>
+		<category><![CDATA[agriculture]]></category>
+		<category><![CDATA[Climate]]></category>
+		<category><![CDATA[Modeling]]></category>
+		<category><![CDATA[Research]]></category>
+		<category><![CDATA[soil]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=647</guid>
+		<description><![CDATA[I am using a modeling approach to answer questions about the ability of cover crops to mitigate climate risks, as described in a recent video produced in collaboration with the Sustainable Corn Project communication team. The conservation community of researchers, &#8230; <a href="https://sustainablecorn.org/blog/?p=647">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=647</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Farmers weigh in on Nitrogen management in a changing climate</title>
+		<link>https://sustainablecorn.org/blog/?p=465</link>
+		<comments>https://sustainablecorn.org/blog/?p=465#comments</comments>
+		<pubDate>Mon, 24 Mar 2014 19:31:50 +0000</pubDate>
+		<dc:creator>Marilyn Thelen</dc:creator>
+				<category><![CDATA[Farmers and Climate Change]]></category>
+		<category><![CDATA[Nitrogen Management]]></category>
+		<category><![CDATA[agriculture]]></category>
+		<category><![CDATA[Nitrogen application]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=465</guid>
+		<description><![CDATA[Climate and weather greatly impact a farmer’s day-to-day operations as well as their livelihood.  To gain perspective on farmers&#8217; production practices and how they are changing, Michigan State University Extension educators and specialist invited farmers from across Michigan to participate &#8230; <a href="https://sustainablecorn.org/blog/?p=465">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=465</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Water Chat</title>
+		<link>https://sustainablecorn.org/blog/?p=461</link>
+		<comments>https://sustainablecorn.org/blog/?p=461#comments</comments>
+		<pubDate>Wed, 12 Mar 2014 19:59:14 +0000</pubDate>
+		<dc:creator>Chad Ingels</dc:creator>
+				<category><![CDATA[Farmers and Climate Change]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[agriculture]]></category>
+		<category><![CDATA[Drought]]></category>
+		<category><![CDATA[Twitter]]></category>
+		<category><![CDATA[water]]></category>
+		<category><![CDATA[Weather and Climate]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=461</guid>
+		<description><![CDATA[Water is an extremely valuable input in agriculture, whether delivered through rain, snow or irrigation. This fact was made very apparent during the kickoff presentation at the recent Iowa Water Conference.  In his presentation Water Issues in the Developing World, Dick Schultz &#8230; <a href="https://sustainablecorn.org/blog/?p=461">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=461</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

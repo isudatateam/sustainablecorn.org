@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sustainablecorn.org  BLOG &#187; 2014</title>
+	<atom:link href="https://sustainablecorn.org/blog/?feed=rss2&#038;tag=2014" rel="self" type="application/rss+xml" />
+	<link>https://sustainablecorn.org/blog</link>
+	<description>Conversations on our research, crop resiliency and climate in the Corn Belt</description>
+	<lastBuildDate>Wed, 30 Aug 2017 19:21:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.6</generator>
+		<item>
+		<title>2014 &#8211; Warmest Year on Record for World, 15th Coldest for Corn Belt</title>
+		<link>https://sustainablecorn.org/blog/?p=636</link>
+		<comments>https://sustainablecorn.org/blog/?p=636#comments</comments>
+		<pubDate>Mon, 26 Jan 2015 15:49:13 +0000</pubDate>
+		<dc:creator>Jim Angel</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Weather and Agriculture]]></category>
+		<category><![CDATA[2014]]></category>
+		<category><![CDATA[cold Corn Belt]]></category>
+		<category><![CDATA[extreme]]></category>
+		<category><![CDATA[record]]></category>
+		<category><![CDATA[warmest]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=636</guid>
+		<description><![CDATA[The year 2014 was considered the warmest year on record for the world, according to three different sources (Japan, NASA, and NOAA). Meanwhile, the Corn Belt experienced the 15th coldest year on record. How can that be? First of all, &#8230; <a href="https://sustainablecorn.org/blog/?p=636">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=636</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

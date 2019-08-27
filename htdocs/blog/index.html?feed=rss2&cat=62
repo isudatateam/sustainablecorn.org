@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sustainablecorn.org  BLOG &#187; Pest &amp; Weed Managment</title>
+	<atom:link href="https://sustainablecorn.org/blog/?feed=rss2&#038;cat=62" rel="self" type="application/rss+xml" />
+	<link>https://sustainablecorn.org/blog</link>
+	<description>Conversations on our research, crop resiliency and climate in the Corn Belt</description>
+	<lastBuildDate>Wed, 30 Aug 2017 19:21:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.6</generator>
+		<item>
+		<title>Revised Corn Field-Guide Reduces Uncertainty</title>
+		<link>https://sustainablecorn.org/blog/?p=411</link>
+		<comments>https://sustainablecorn.org/blog/?p=411#comments</comments>
+		<pubDate>Wed, 27 Nov 2013 20:53:06 +0000</pubDate>
+		<dc:creator>Lynn Laws</dc:creator>
+				<category><![CDATA[Pest & Weed Managment]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=411</guid>
+		<description><![CDATA[AMES, Iowa — Identifying pests, diseases, disorders and developmental stages in Midwestern corn crops just became easier. New and larger color photographs, updated information on plant diseases and crop production, and additional topics are included in the second edition of &#8230; <a href="https://sustainablecorn.org/blog/?p=411">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=411</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

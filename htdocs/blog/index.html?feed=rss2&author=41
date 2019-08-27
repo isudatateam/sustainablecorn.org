@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sustainablecorn.org  BLOG &#187; Pat Guinan</title>
+	<atom:link href="https://sustainablecorn.org/blog/?feed=rss2&#038;author=41" rel="self" type="application/rss+xml" />
+	<link>https://sustainablecorn.org/blog</link>
+	<description>Conversations on our research, crop resiliency and climate in the Corn Belt</description>
+	<lastBuildDate>Wed, 30 Aug 2017 19:21:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.6</generator>
+		<item>
+		<title>First Fall Freeze?</title>
+		<link>https://sustainablecorn.org/blog/?p=585</link>
+		<comments>https://sustainablecorn.org/blog/?p=585#comments</comments>
+		<pubDate>Fri, 18 Sep 2015 22:00:09 +0000</pubDate>
+		<dc:creator>Pat Guinan</dc:creator>
+				<category><![CDATA[Crop Progress]]></category>
+		<category><![CDATA[Weather and Agriculture]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=585</guid>
+		<description><![CDATA[Dennis Todey, South Dakota State Climatologist Pat Guinan, Missouri State Climatologist This time of year questions about frost/freeze potential are common as producers look for a little more time for crops to mature, or gardeners and horticultural interests hope for &#8230; <a href="https://sustainablecorn.org/blog/?p=585">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=585</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>The Drought Impact Reporter</title>
+		<link>https://sustainablecorn.org/blog/?p=587</link>
+		<comments>https://sustainablecorn.org/blog/?p=587#comments</comments>
+		<pubDate>Tue, 19 Aug 2014 14:49:58 +0000</pubDate>
+		<dc:creator>Pat Guinan</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Weather and Agriculture]]></category>
+		<category><![CDATA[Climate]]></category>
+		<category><![CDATA[Drought]]></category>
+		<category><![CDATA[weather]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=587</guid>
+		<description><![CDATA[By Michelle Proctor, Senior Information Specialist, and Pat Guinan, Extension/State Climatologist, University of Missouri Pat Guinan, University of Missouri Extension climatologist with the Commercial Agriculture Program, encourages people to use the Drought Impact Reporter (DIR) as a way to inform &#8230; <a href="https://sustainablecorn.org/blog/?p=587">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=587</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Missouri 2013 Growing Season Climate Summary</title>
+		<link>https://sustainablecorn.org/blog/?p=382</link>
+		<comments>https://sustainablecorn.org/blog/?p=382#comments</comments>
+		<pubDate>Fri, 15 Nov 2013 16:52:14 +0000</pubDate>
+		<dc:creator>Pat Guinan</dc:creator>
+				<category><![CDATA[Weather and Agriculture]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=382</guid>
+		<description><![CDATA[The 2013 growing season was dominated by anomalous weather conditions for much of the spring and summer, and made it another challenging year for Missouri farmers. Agricultural conditions only began to improve toward the end of the growing season with &#8230; <a href="https://sustainablecorn.org/blog/?p=382">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=382</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>July and August Rainfall in Missouri – The Tale of the Haves and the Have-Nots</title>
+		<link>https://sustainablecorn.org/blog/?p=303</link>
+		<comments>https://sustainablecorn.org/blog/?p=303#comments</comments>
+		<pubDate>Mon, 19 Aug 2013 15:34:31 +0000</pubDate>
+		<dc:creator>Pat Guinan</dc:creator>
+				<category><![CDATA[Crop Progress]]></category>
+		<category><![CDATA[Weather and Agriculture]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=303</guid>
+		<description><![CDATA[Missouri has experienced some large precipitation disparities this summer, ranging from moderate drought to historic flooding. The disparities have been especially notable in August. Some south central counties have received 15-20 inches of rain this month, whereas 120 miles to &#8230; <a href="https://sustainablecorn.org/blog/?p=303">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=303</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

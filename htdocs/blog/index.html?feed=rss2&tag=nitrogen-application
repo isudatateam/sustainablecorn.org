@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sustainablecorn.org  BLOG &#187; Nitrogen application</title>
+	<atom:link href="https://sustainablecorn.org/blog/?feed=rss2&#038;tag=nitrogen-application" rel="self" type="application/rss+xml" />
+	<link>https://sustainablecorn.org/blog</link>
+	<description>Conversations on our research, crop resiliency and climate in the Corn Belt</description>
+	<lastBuildDate>Wed, 30 Aug 2017 19:21:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.6</generator>
+		<item>
+		<title>Farmers weigh in on Nitrogen management in a changing climate</title>
+		<link>https://sustainablecorn.org/blog/?p=465</link>
+		<comments>https://sustainablecorn.org/blog/?p=465#comments</comments>
+		<pubDate>Mon, 24 Mar 2014 19:31:50 +0000</pubDate>
+		<dc:creator>Marilyn Thelen</dc:creator>
+				<category><![CDATA[Farmers and Climate Change]]></category>
+		<category><![CDATA[Nitrogen Management]]></category>
+		<category><![CDATA[agriculture]]></category>
+		<category><![CDATA[Nitrogen application]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=465</guid>
+		<description><![CDATA[Climate and weather greatly impact a farmer’s day-to-day operations as well as their livelihood.  To gain perspective on farmers&#8217; production practices and how they are changing, Michigan State University Extension educators and specialist invited farmers from across Michigan to participate &#8230; <a href="https://sustainablecorn.org/blog/?p=465">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=465</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Tips for Fall Nutrient and Lime Applications</title>
+		<link>https://sustainablecorn.org/blog/?p=341</link>
+		<comments>https://sustainablecorn.org/blog/?p=341#comments</comments>
+		<pubDate>Mon, 30 Sep 2013 15:26:18 +0000</pubDate>
+		<dc:creator>John Sawyer</dc:creator>
+				<category><![CDATA[Nitrogen Management]]></category>
+		<category><![CDATA[fall fertilizer]]></category>
+		<category><![CDATA[Lime application]]></category>
+		<category><![CDATA[Nitrogen application]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=341</guid>
+		<description><![CDATA[The fall season is a common time for application of fertilizer and manure. Here are a few tips to consider as you plan those applications. Use current soil sample test results to guide need for phosphorus and potassium applications. Monitor &#8230; <a href="https://sustainablecorn.org/blog/?p=341">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=341</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

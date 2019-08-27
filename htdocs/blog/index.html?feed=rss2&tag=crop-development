@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sustainablecorn.org  BLOG &#187; crop development</title>
+	<atom:link href="https://sustainablecorn.org/blog/?feed=rss2&#038;tag=crop-development" rel="self" type="application/rss+xml" />
+	<link>https://sustainablecorn.org/blog</link>
+	<description>Conversations on our research, crop resiliency and climate in the Corn Belt</description>
+	<lastBuildDate>Wed, 30 Aug 2017 19:21:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.6</generator>
+		<item>
+		<title>Drought issues returning</title>
+		<link>https://sustainablecorn.org/blog/?p=279</link>
+		<comments>https://sustainablecorn.org/blog/?p=279#comments</comments>
+		<pubDate>Fri, 06 Sep 2013 18:00:02 +0000</pubDate>
+		<dc:creator>Dennis Todey</dc:creator>
+				<category><![CDATA[Crop Progress]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Weather and Agriculture]]></category>
+		<category><![CDATA[crop development]]></category>
+		<category><![CDATA[Drought]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=279</guid>
+		<description><![CDATA[The most recent US Drought Monitor map shows drought returning to larger parts of the Corn Belt in the last few weeks. This has been driven by warm temperatures over the last part of August. Dryness has existed across parts &#8230; <a href="https://sustainablecorn.org/blog/?p=279">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=279</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

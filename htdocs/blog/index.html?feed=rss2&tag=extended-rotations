@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sustainablecorn.org  BLOG &#187; Extended Rotations</title>
+	<atom:link href="https://sustainablecorn.org/blog/?feed=rss2&#038;tag=extended-rotations" rel="self" type="application/rss+xml" />
+	<link>https://sustainablecorn.org/blog</link>
+	<description>Conversations on our research, crop resiliency and climate in the Corn Belt</description>
+	<lastBuildDate>Wed, 30 Aug 2017 19:21:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.6</generator>
+		<item>
+		<title>Extending the Rotation Beyond Corn and Beans</title>
+		<link>https://sustainablecorn.org/blog/?p=614</link>
+		<comments>https://sustainablecorn.org/blog/?p=614#comments</comments>
+		<pubDate>Mon, 24 Nov 2014 20:45:34 +0000</pubDate>
+		<dc:creator>Chad Ingels</dc:creator>
+				<category><![CDATA[Cover Crops]]></category>
+		<category><![CDATA[Extended Rotations]]></category>
+		<category><![CDATA[soil]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=614</guid>
+		<description><![CDATA[&#160; Sustainable Corn Project advisory board member, Dick Sloan, and Iowa State University Agronomy professor, Matt Liebman, will present Extending the Rotation Beyond Corn and Beans as part of the Practical Farmers of Iowa Fall Farminar Series Tuesday, November 25, starting &#8230; <a href="https://sustainablecorn.org/blog/?p=614">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=614</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Speed Science</title>
+		<link>https://sustainablecorn.org/blog/?p=147</link>
+		<comments>https://sustainablecorn.org/blog/?p=147#comments</comments>
+		<pubDate>Mon, 11 Mar 2013 17:17:03 +0000</pubDate>
+		<dc:creator>admin</dc:creator>
+				<category><![CDATA[Cover Crops]]></category>
+		<category><![CDATA[Drainage Water Management]]></category>
+		<category><![CDATA[Extended Rotations]]></category>
+		<category><![CDATA[Nitrogen Management]]></category>
+		<category><![CDATA[Tillage Management]]></category>
+		<category><![CDATA[Weather and Agriculture]]></category>
+		<category><![CDATA[Speed Science]]></category>
+		<category><![CDATA[Weather and Climate]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=147</guid>
+		<description><![CDATA[Want to learn a lot about crops, climate, culture, and change, all in a short period of time?  Check out the Speed Science Resources available on our website.  They include both factsheets and short videos and are approved for use &#8230; <a href="https://sustainablecorn.org/blog/?p=147">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=147</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

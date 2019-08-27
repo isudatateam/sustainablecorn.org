@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sustainablecorn.org  BLOG &#187; tillage</title>
+	<atom:link href="https://sustainablecorn.org/blog/?feed=rss2&#038;tag=tillage" rel="self" type="application/rss+xml" />
+	<link>https://sustainablecorn.org/blog</link>
+	<description>Conversations on our research, crop resiliency and climate in the Corn Belt</description>
+	<lastBuildDate>Wed, 30 Aug 2017 19:21:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.6</generator>
+		<item>
+		<title>Days suitable for field work in the Corn Belt</title>
+		<link>https://sustainablecorn.org/blog/?p=477</link>
+		<comments>https://sustainablecorn.org/blog/?p=477#comments</comments>
+		<pubDate>Wed, 02 Apr 2014 19:44:57 +0000</pubDate>
+		<dc:creator>Ben Gramig</dc:creator>
+				<category><![CDATA[Crop Progress]]></category>
+		<category><![CDATA[Decision Tools for Farmers]]></category>
+		<category><![CDATA[Nitrogen Management]]></category>
+		<category><![CDATA[Tillage Management]]></category>
+		<category><![CDATA[DST]]></category>
+		<category><![CDATA[Field work]]></category>
+		<category><![CDATA[harvest]]></category>
+		<category><![CDATA[planting]]></category>
+		<category><![CDATA[tillage]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=477</guid>
+		<description><![CDATA[Tillage, planting, fertilizer application and harvest all require field work to be completed. The timing and sequencing of these activities are critical for crop development, field dry down and farm profitability. Members of the Useful-to-Usable team have compiled weekly reports &#8230; <a href="https://sustainablecorn.org/blog/?p=477">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=477</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

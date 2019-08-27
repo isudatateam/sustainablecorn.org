@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sustainablecorn.org  BLOG &#187; Climate Change Education</title>
+	<atom:link href="https://sustainablecorn.org/blog/?feed=rss2&#038;cat=125" rel="self" type="application/rss+xml" />
+	<link>https://sustainablecorn.org/blog</link>
+	<description>Conversations on our research, crop resiliency and climate in the Corn Belt</description>
+	<lastBuildDate>Wed, 30 Aug 2017 19:21:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.6</generator>
+		<item>
+		<title>Climate Change in the Corn Belt</title>
+		<link>https://sustainablecorn.org/blog/?p=771</link>
+		<comments>https://sustainablecorn.org/blog/?p=771#comments</comments>
+		<pubDate>Wed, 06 Apr 2016 15:35:31 +0000</pubDate>
+		<dc:creator>Lynn Laws</dc:creator>
+				<category><![CDATA[Climate Change Education]]></category>
+		<category><![CDATA[Updates]]></category>
+		<category><![CDATA[Weather and Agriculture]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=771</guid>
+		<description><![CDATA[Researchers with the Climate and Corn-based Cropping Systems Coordinated Agricultural Project (commonly known as the Sustainable Corn Project) have documented 130 findings. This new publication of findings explains how climate change is impacting and will continue to impact weather in &#8230; <a href="https://sustainablecorn.org/blog/?p=771">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=771</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>New climate education resource for educators</title>
+		<link>https://sustainablecorn.org/blog/?p=732</link>
+		<comments>https://sustainablecorn.org/blog/?p=732#comments</comments>
+		<pubDate>Mon, 17 Aug 2015 15:03:05 +0000</pubDate>
+		<dc:creator>Lynn Laws</dc:creator>
+				<category><![CDATA[Climate Change Education]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=732</guid>
+		<description><![CDATA[NOAA, the NCAnet Education Affinity Group, and members of the CLEAN Network have developed a series of guides for educators that focus on the regional chapters of NOAA’s National Climate Assessment Report, helping to unpack the key messages of each region and point &#8230; <a href="https://sustainablecorn.org/blog/?p=732">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=732</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

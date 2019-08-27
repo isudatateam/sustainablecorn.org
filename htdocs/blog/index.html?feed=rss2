@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sustainablecorn.org  BLOG</title>
+	<atom:link href="https://sustainablecorn.org/blog/?feed=rss2" rel="self" type="application/rss+xml" />
+	<link>https://sustainablecorn.org/blog</link>
+	<description>Conversations on our research, crop resiliency and climate in the Corn Belt</description>
+	<lastBuildDate>Wed, 30 Aug 2017 19:21:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.6</generator>
+		<item>
+		<title>New Website for Regional Corn Nitrogen Rate Calculator</title>
+		<link>https://sustainablecorn.org/blog/?p=779</link>
+		<comments>https://sustainablecorn.org/blog/?p=779#comments</comments>
+		<pubDate>Mon, 16 May 2016 18:06:15 +0000</pubDate>
+		<dc:creator>Lynn Laws</dc:creator>
+				<category><![CDATA[Decision Tools for Farmers]]></category>
+		<category><![CDATA[Nitrogen Management]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=779</guid>
+		<description><![CDATA[AMES, Iowa – The regional Corn Nitrogen Rate Calculator website, which has been helping farmers determine profitable nitrogen rates since 2005, now has a new URL (cnrc.agron.iastate.edu) and a revised nitrogen response trial database, and is more user friendly for mobile devices. &#8230; <a href="https://sustainablecorn.org/blog/?p=779">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=779</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Saturated Buffers Improving Iowa Water Quality</title>
+		<link>https://sustainablecorn.org/blog/?p=775</link>
+		<comments>https://sustainablecorn.org/blog/?p=775#comments</comments>
+		<pubDate>Wed, 27 Apr 2016 13:44:21 +0000</pubDate>
+		<dc:creator>Lynn Laws</dc:creator>
+				<category><![CDATA[Drainage Water Management]]></category>
+		<category><![CDATA[Nitrogen Management]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=775</guid>
+		<description><![CDATA[AMES, Iowa – Using science-based research, Iowa State University Extension and Outreach specialists are working to improve the quality of water throughout the state of Iowa. The use of saturated buffers in watersheds has proven to be a successful nitrate &#8230; <a href="https://sustainablecorn.org/blog/?p=775">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=775</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Climate Change in the Corn Belt</title>
+		<link>https://sustainablecorn.org/blog/?p=771</link>
+		<comments>https://sustainablecorn.org/blog/?p=771#comments</comments>
+		<pubDate>Wed, 06 Apr 2016 15:35:31 +0000</pubDate>
+		<dc:creator>Lynn Laws</dc:creator>
+				<category><![CDATA[Climate Change Education]]></category>
+		<category><![CDATA[Updates]]></category>
+		<category><![CDATA[Weather and Agriculture]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=771</guid>
+		<description><![CDATA[Researchers with the Climate and Corn-based Cropping Systems Coordinated Agricultural Project (commonly known as the Sustainable Corn Project) have documented 130 findings. This new publication of findings explains how climate change is impacting and will continue to impact weather in &#8230; <a href="https://sustainablecorn.org/blog/?p=771">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=771</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Corn Project Findings</title>
+		<link>https://sustainablecorn.org/blog/?p=764</link>
+		<comments>https://sustainablecorn.org/blog/?p=764#comments</comments>
+		<pubDate>Wed, 27 Jan 2016 17:43:29 +0000</pubDate>
+		<dc:creator>Lynn Laws</dc:creator>
+				<category><![CDATA[Cover Crops]]></category>
+		<category><![CDATA[Drainage Water Management]]></category>
+		<category><![CDATA[Extended Rotations]]></category>
+		<category><![CDATA[Farmers and Climate Change]]></category>
+		<category><![CDATA[Nitrogen Management]]></category>
+		<category><![CDATA[Tillage Management]]></category>
+		<category><![CDATA[Weather and Agriculture]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=764</guid>
+		<description><![CDATA[Researchers with the Climate and Corn-based Cropping Systems Coordinated Agricultural Project (commonly known as the Sustainable Corn Project) have documented 130 findings, some of which will be explored during a Feb. 11 webinar, open to the public through Iowa State &#8230; <a href="https://sustainablecorn.org/blog/?p=764">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=764</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Effectively Engaging Producers in Conservation Conversations</title>
+		<link>https://sustainablecorn.org/blog/?p=761</link>
+		<comments>https://sustainablecorn.org/blog/?p=761#comments</comments>
+		<pubDate>Wed, 27 Jan 2016 17:29:34 +0000</pubDate>
+		<dc:creator>Lynn Laws</dc:creator>
+				<category><![CDATA[Farmers and Climate Change]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=761</guid>
+		<description><![CDATA[WEBINAR: February 16, 1:00 p.m. CST; 2:00 EST Participate to learn what social scientists are discovering about how farmers are thinking about conservation practices and practical strategies for engaging them. Emphasis of this webinar will include findings on farmer uncertainty &#8230; <a href="https://sustainablecorn.org/blog/?p=761">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=761</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Lois Wright Morton</title>
+		<link>https://sustainablecorn.org/blog/?p=756</link>
+		<comments>https://sustainablecorn.org/blog/?p=756#comments</comments>
+		<pubDate>Mon, 14 Dec 2015 18:21:50 +0000</pubDate>
+		<dc:creator>Lynn Laws</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=756</guid>
+		<description><![CDATA[Leading a diverse team of scientists and specialists, with USDA&#8217;s Sustainable Corn Project, is Lois Wright Morton. In addition to leading the 10-university team, Morton is a farmer, a sociology professor at Iowa State University, and a member of the &#8230; <a href="https://sustainablecorn.org/blog/?p=756">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=756</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Corn SplitN Decision Support Tool Now Available in All 12 Corn Belt States</title>
+		<link>https://sustainablecorn.org/blog/?p=752</link>
+		<comments>https://sustainablecorn.org/blog/?p=752#comments</comments>
+		<pubDate>Tue, 03 Nov 2015 18:37:06 +0000</pubDate>
+		<dc:creator>Lynn Laws</dc:creator>
+				<category><![CDATA[Decision Tools for Farmers]]></category>
+		<category><![CDATA[Nitrogen Management]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=752</guid>
+		<description><![CDATA[Now farmers and advisors in all 12 Corn Belt states can use the free Corn-Split N decision support tool, developed by the USDA-funded Useful to Useful climate initiative. The tool helps farmers and advisors manage nitrogen application for efficiency and &#8230; <a href="https://sustainablecorn.org/blog/?p=752">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=752</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Climate &amp; Ag Research by Next Generation Scientists</title>
+		<link>https://sustainablecorn.org/blog/?p=747</link>
+		<comments>https://sustainablecorn.org/blog/?p=747#comments</comments>
+		<pubDate>Wed, 07 Oct 2015 19:55:58 +0000</pubDate>
+		<dc:creator>Lynn Laws</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=747</guid>
+		<description><![CDATA[Learn about research being conducted, by the Sustainable Corn Project’s graduate students and post-doctoral students, in a new booklet now available for viewing online. Prepared for a poster symposium to be held in Washinton, D.C., October 15-16, the booklet contains 31 &#8230; <a href="https://sustainablecorn.org/blog/?p=747">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=747</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>First Fall Freeze?</title>
+		<link>https://sustainablecorn.org/blog/?p=585</link>
+		<comments>https://sustainablecorn.org/blog/?p=585#comments</comments>
+		<pubDate>Fri, 18 Sep 2015 22:00:09 +0000</pubDate>
+		<dc:creator>Pat Guinan</dc:creator>
+				<category><![CDATA[Crop Progress]]></category>
+		<category><![CDATA[Weather and Agriculture]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=585</guid>
+		<description><![CDATA[Dennis Todey, South Dakota State Climatologist Pat Guinan, Missouri State Climatologist This time of year questions about frost/freeze potential are common as producers look for a little more time for crops to mature, or gardeners and horticultural interests hope for &#8230; <a href="https://sustainablecorn.org/blog/?p=585">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=585</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>New climate education resource for educators</title>
+		<link>https://sustainablecorn.org/blog/?p=732</link>
+		<comments>https://sustainablecorn.org/blog/?p=732#comments</comments>
+		<pubDate>Mon, 17 Aug 2015 15:03:05 +0000</pubDate>
+		<dc:creator>Lynn Laws</dc:creator>
+				<category><![CDATA[Climate Change Education]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=732</guid>
+		<description><![CDATA[NOAA, the NCAnet Education Affinity Group, and members of the CLEAN Network have developed a series of guides for educators that focus on the regional chapters of NOAA’s National Climate Assessment Report, helping to unpack the key messages of each region and point &#8230; <a href="https://sustainablecorn.org/blog/?p=732">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=732</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

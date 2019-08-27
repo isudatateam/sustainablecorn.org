@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sustainablecorn.org  BLOG &#187; Climate Prediction Center</title>
+	<atom:link href="https://sustainablecorn.org/blog/?feed=rss2&#038;tag=climate-prediction-center" rel="self" type="application/rss+xml" />
+	<link>https://sustainablecorn.org/blog</link>
+	<description>Conversations on our research, crop resiliency and climate in the Corn Belt</description>
+	<lastBuildDate>Wed, 30 Aug 2017 19:21:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.6</generator>
+		<item>
+		<title>El Nino and It&#8217;s Potential Impact on the Corn Belt</title>
+		<link>https://sustainablecorn.org/blog/?p=699</link>
+		<comments>https://sustainablecorn.org/blog/?p=699#comments</comments>
+		<pubDate>Thu, 28 May 2015 14:16:34 +0000</pubDate>
+		<dc:creator>Jim Angel</dc:creator>
+				<category><![CDATA[Weather and Agriculture]]></category>
+		<category><![CDATA[Climate Prediction Center]]></category>
+		<category><![CDATA[fall]]></category>
+		<category><![CDATA[forecast]]></category>
+		<category><![CDATA[summer]]></category>
+		<category><![CDATA[winter]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=699</guid>
+		<description><![CDATA[In early May 2015, the Climate Prediction Center reported that weak to moderate El Niño conditions were present in the Pacific Ocean basin, along the equator. Furthermore, there is a greater 90% chance it will continue through summer and a &#8230; <a href="https://sustainablecorn.org/blog/?p=699">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=699</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>NWS Outlook &#8211; Wet October for Northern Corn Belt</title>
+		<link>https://sustainablecorn.org/blog/?p=595</link>
+		<comments>https://sustainablecorn.org/blog/?p=595#comments</comments>
+		<pubDate>Fri, 19 Sep 2014 15:45:21 +0000</pubDate>
+		<dc:creator>Jim Angel</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Weather and Agriculture]]></category>
+		<category><![CDATA[Climate Prediction Center]]></category>
+		<category><![CDATA[October]]></category>
+		<category><![CDATA[seasonal outlook]]></category>
+		<category><![CDATA[wet]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=595</guid>
+		<description><![CDATA[Much of the northern Corn Belt has an increased chance of above-average precipitation in October, according to the NWS Climate Prediction Center. This follows on the heels of above-average precipitation over the last 30 days across the Corn Belt. In &#8230; <a href="https://sustainablecorn.org/blog/?p=595">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=595</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>NOAA Seasonal Outlook &#8211; Cooler in the Northern Corn Belt This Summer?</title>
+		<link>https://sustainablecorn.org/blog/?p=515</link>
+		<comments>https://sustainablecorn.org/blog/?p=515#comments</comments>
+		<pubDate>Thu, 19 Jun 2014 19:23:11 +0000</pubDate>
+		<dc:creator>Jim Angel</dc:creator>
+				<category><![CDATA[Crop Progress]]></category>
+		<category><![CDATA[Climate Prediction Center]]></category>
+		<category><![CDATA[El Nino]]></category>
+		<category><![CDATA[NOAA]]></category>
+		<category><![CDATA[seasonal outlook]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=515</guid>
+		<description><![CDATA[On June 19, the NOAA Climate Prediction Center released their latest monthly and seasonal outlook of temperature and precipitation for the US. One of the factors that will likely come into play this fall and winter is the developing El &#8230; <a href="https://sustainablecorn.org/blog/?p=515">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=515</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

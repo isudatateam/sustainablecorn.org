@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>sustainablecorn.org  BLOG &#187; climate camp</title>
+	<atom:link href="https://sustainablecorn.org/blog/?feed=rss2&#038;tag=climate-camp" rel="self" type="application/rss+xml" />
+	<link>https://sustainablecorn.org/blog</link>
+	<description>Conversations on our research, crop resiliency and climate in the Corn Belt</description>
+	<lastBuildDate>Wed, 30 Aug 2017 19:21:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.6</generator>
+		<item>
+		<title>Climate Camp 2014</title>
+		<link>https://sustainablecorn.org/blog/?p=531</link>
+		<comments>https://sustainablecorn.org/blog/?p=531#comments</comments>
+		<pubDate>Mon, 30 Jun 2014 19:46:58 +0000</pubDate>
+		<dc:creator>Chad Ingels</dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[climate camp]]></category>
+		<category><![CDATA[education]]></category>
+
+		<guid isPermaLink="false">http://sustainablecorn.org/blog/?p=531</guid>
+		<description><![CDATA[The following post is by guest blogger Amanda Hoover.  Amanda is an agriculture teacher and FFA advisor at Continental Local Schools in Continental, Ohio. She is a graduate of South Dakota State University, one of the 10 partner institutions involved &#8230; <a href="https://sustainablecorn.org/blog/?p=531">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+		<wfw:commentRss>https://sustainablecorn.org/blog/?feed=rss2&#038;p=531</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>
