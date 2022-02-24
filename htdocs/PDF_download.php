@@ -7,10 +7,15 @@ function endsWith($haystack, $needle) {
 
 if (isset($_GET["d"])){
   header("Content-type: application/pdf");
+    if (! file_exists($f)) {
+        header("HTTP/1.0 404 Not Found");
+        exit();
+    }
   if (endsWith($f, ".pdf")){
     die(file_get_contents($f));
   }
-  die();
+  header("HTTP/1.0 404 Not Found");
+  exit();
 }
 if (isset($_SERVER["PATH_INFO"])){
   header("Content-type: application/pdf");
