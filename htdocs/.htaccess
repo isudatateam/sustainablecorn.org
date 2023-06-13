@@ -1,4 +1,4 @@
 RewriteEngine On
 RewriteCond %{REQUEST_URI} !^/PDF_download.php
-RewriteRule ^(.*\.pdf)$ /PDF_download.php?f=$1 [L]
+RewriteRule ^(.*\.pdf)$ /PDF_download.php?f=$1 [BL]
 
