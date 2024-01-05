@@ -7,11 +7,11 @@ function endsWith($haystack, $needle)
 }
 
 if (isset($_GET["d"])) {
-    header("Content-type: application/pdf");
     if (!file_exists($f)) {
         header("HTTP/1.0 404 Not Found");
         exit();
     }
+    header("Content-type: application/pdf");
     if (endsWith($f, ".pdf")) {
         die(file_get_contents($f));
     }
@@ -19,8 +19,12 @@ if (isset($_GET["d"])) {
     exit();
 }
 if (isset($_SERVER["PATH_INFO"])) {
-    header("Content-type: application/pdf");
     $f = $_SERVER["PATH_INFO"];
+    if (!file_exists($f)) {
+        header("HTTP/1.0 404 Not Found");
+        exit();
+    }
+    header("Content-type: application/pdf");
     if (endsWith($f, ".pdf")) {
         die(file_get_contents("." . $f));
     }
